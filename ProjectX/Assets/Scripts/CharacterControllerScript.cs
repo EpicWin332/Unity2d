@@ -3,21 +3,21 @@ using System.Collections;
 
 public class CharacterControllerScript : MonoBehaviour
 {
-	//находится ли персонаж на земле или в прыжке?
-	private bool isGrounded = false;
-	//ссылка на компонент Transform объекта
-	//для определения соприкосновения с землей
-	public Transform groundCheck;
-	//радиус определения соприкосновения с землей
-	private float groundRadius = 0.5f;
-	//ссылка на слой, представляющий землю
-	public LayerMask whatIsGround;
 	//переменная для установки макс. скорости персонажа
 	public float maxSpeed = 10f; 
 	//переменная для определения направления персонажа вправо/влево
 	private bool isFacingRight = true;
 	//ссылка на компонент анимаций
 	private Animator anim;
+	//находится ли персонаж на земле или в прыжке?
+	private bool isGrounded = false;
+	//ссылка на компонент Transform объекта
+	//для определения соприкосновения с землей
+	public Transform groundCheck;
+	//радиус определения соприкосновения с землей
+	private float groundRadius = 0.2f;
+	//ссылка на слой, представляющий землю
+	public LayerMask whatIsGround;
 	
 	/// <summary>
 	/// Начальная инициализация
@@ -64,7 +64,7 @@ public class CharacterControllerScript : MonoBehaviour
 		else if (move < 0 && isFacingRight)
 			Flip();
 	}
-
+	
 	private void Update()
 	{
 		//если персонаж на земле и нажат пробел...
