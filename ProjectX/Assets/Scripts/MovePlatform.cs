@@ -20,9 +20,9 @@ public class MovePlatform : MonoBehaviour {
 //		Random rand1 = new Random(-2,2);
 		System.Random rnd = new System.Random ();
 		int posY = rnd.Next(-2,2);
-		if (rigidbody2D.position.x < -22f) {
+		if (rigidbody2D.position.x < -13f) {
 		    		
-			rigidbody2D.position = new Vector2(22.5f, posY);
+			rigidbody2D.position = new Vector2(10.5f, posY);
 		
 		}
 	
