@@ -16,7 +16,7 @@ public class MoveSecond : MonoBehaviour {
 	}
 	// Update is called once per frame
 	void Update () {
-		if (rigidbody2D.position.x < -18f) {
+		if (rigidbody2D.position.x < -22f) {
 			
 			rigidbody2D.position = new Vector2(22.5f, -2f);
 			
