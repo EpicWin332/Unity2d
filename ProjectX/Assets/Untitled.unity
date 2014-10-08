@@ -121,6 +121,18 @@ Prefab:
       propertyPath: m_LocalScale.y
       value: .291158527
       objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 4562ac9dbb6c743fa954427b1d8813ec, type: 2}
+      propertyPath: SpawnMin
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 4562ac9dbb6c743fa954427b1d8813ec, type: 2}
+      propertyPath: SpawnMax
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 4562ac9dbb6c743fa954427b1d8813ec, type: 2}
+      propertyPath: obj.Array.data[0]
+      value: 
+      objectReference: {fileID: 1686613260}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4562ac9dbb6c743fa954427b1d8813ec, type: 2}
   m_RootGameObject: {fileID: 735260624}
@@ -185,9 +197,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   obj:
-  - {fileID: 100000, guid: 26e79e947d1834dc2921cd464df278a5, type: 2}
-  SpawnMin: 1
-  SpawnMax: 2
+  - {fileID: 1686613260}
+  SpawnMin: 3
+  SpawnMax: 4
 --- !u!23 &735260626
 Renderer:
   m_ObjectHideFlags: 0
