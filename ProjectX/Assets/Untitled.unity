@@ -139,11 +139,11 @@ Prefab:
       objectReference: {fileID: 902185785}
     - target: {fileID: 11400000, guid: 4562ac9dbb6c743fa954427b1d8813ec, type: 2}
       propertyPath: SpawnMin
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 4562ac9dbb6c743fa954427b1d8813ec, type: 2}
       propertyPath: SpawnMax
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4562ac9dbb6c743fa954427b1d8813ec, type: 2}
@@ -212,8 +212,8 @@ MonoBehaviour:
   - {fileID: 1686613260}
   - {fileID: 2075609319}
   - {fileID: 902185785}
-  SpawnMin: 1
-  SpawnMax: 2
+  SpawnMin: 2
+  SpawnMax: 3
 --- !u!23 &735260626
 Renderer:
   m_ObjectHideFlags: 0
