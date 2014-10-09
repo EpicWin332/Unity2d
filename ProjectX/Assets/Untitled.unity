@@ -139,11 +139,11 @@ Prefab:
       objectReference: {fileID: 902185785}
     - target: {fileID: 11400000, guid: 4562ac9dbb6c743fa954427b1d8813ec, type: 2}
       propertyPath: SpawnMin
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 4562ac9dbb6c743fa954427b1d8813ec, type: 2}
       propertyPath: SpawnMax
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4562ac9dbb6c743fa954427b1d8813ec, type: 2}
@@ -212,8 +212,8 @@ MonoBehaviour:
   - {fileID: 1686613260}
   - {fileID: 2075609319}
   - {fileID: 902185785}
-  SpawnMin: 2
-  SpawnMax: 3
+  SpawnMin: 1
+  SpawnMax: 2
 --- !u!23 &735260626
 Renderer:
   m_ObjectHideFlags: 0
@@ -360,6 +360,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxSpeed: -5
+  endPosition: -12
+  targetObject: {fileID: 0}
 --- !u!1 &1379103344
 GameObject:
   m_ObjectHideFlags: 0
@@ -621,6 +623,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxSpeed: -5
+  endPosition: -12
+  targetObject: {fileID: 1379103344}
 --- !u!50 &1686613264
 Rigidbody2D:
   m_ObjectHideFlags: 0
@@ -1007,3 +1011,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxSpeed: -5
+  endPosition: -12
+  targetObject: {fileID: 0}
