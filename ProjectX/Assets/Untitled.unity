@@ -361,7 +361,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxSpeed: -5
   endPosition: -12
-  targetObject: {fileID: 0}
+  targetObject: {fileID: 1379103344}
 --- !u!1 &1379103344
 GameObject:
   m_ObjectHideFlags: 0
@@ -1012,4 +1012,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxSpeed: -5
   endPosition: -12
-  targetObject: {fileID: 0}
+  targetObject: {fileID: 1379103344}
