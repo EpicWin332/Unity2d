@@ -17,5 +17,12 @@ public class CameraScript : MonoBehaviour {
 		Vector3 newCameraPosition = transform.position;
 		newCameraPosition.x = targetObjectX+2;
 		transform.position = newCameraPosition;
+
+		if (Application.platform == RuntimePlatform.Android) {
+						if (Input.GetKey (KeyCode.Escape)) {
+								Application.LoadLevel (0);
+								return;
+						}
+				}
 	}
 }
