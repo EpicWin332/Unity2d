@@ -661,6 +661,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetObject: {fileID: 1749908160}
+  buttonTexture: {fileID: 2800000, guid: 30c190f78e6374f21bab191cc511ff99, type: 3}
+  playTexture: {fileID: 2800000, guid: dbaecb56252f4444293f8ffb08b7e2ff, type: 3}
+  homeTexture: {fileID: 2800000, guid: 9e91b44df612643a79070e46796987cc, type: 3}
 --- !u!1001 &1633972197
 Prefab:
   m_ObjectHideFlags: 0
@@ -752,6 +755,10 @@ Prefab:
       propertyPath: m_Radius
       value: .200000003
       objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 87a2357765801c34292d6718d8b4d770, type: 2}
+      propertyPath: pauseImage
+      value: 
+      objectReference: {fileID: 2800000, guid: 30c190f78e6374f21bab191cc511ff99, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 87a2357765801c34292d6718d8b4d770, type: 2}
   m_RootGameObject: {fileID: 1749908160}
@@ -817,6 +824,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3d7b34a3bb2d4e4b926e7e729d3d410, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pauseImage: {fileID: 2800000, guid: 30c190f78e6374f21bab191cc511ff99, type: 3}
 --- !u!114 &1749908164
 MonoBehaviour:
   m_ObjectHideFlags: 0

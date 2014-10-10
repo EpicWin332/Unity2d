@@ -5,6 +5,7 @@ public class Platformer2DUserControl : MonoBehaviour
 {
 	private PlatformerCharacter2D character;
     private bool jump;
+	public Texture2D pauseImage;
 
 
 	void Awake()
@@ -18,9 +19,9 @@ public class Platformer2DUserControl : MonoBehaviour
 #if CROSS_PLATFORM_INPUT
         if (CrossPlatformInput.GetButtonDown("Jump")) jump = true;
 #else
-		if (Input.GetButtonDown("Fire1")) jump = true;
+		if (!CameraScript.visible && Input.GetButtonDown("Fire1")&&!((Input.mousePosition.x>Camera.main.pixelWidth-pauseImage.width-2)&&
+		                                    (Input.mousePosition.y>Camera.main.pixelHeight-pauseImage.height))) jump = true;
 #endif
-
     }
 
 	void FixedUpdate()
