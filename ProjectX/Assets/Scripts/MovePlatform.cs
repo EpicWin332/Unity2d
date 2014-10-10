@@ -27,6 +27,5 @@ public class MovePlatform : MonoBehaviour {
 		    		
 			rigidbody2D.position = new Vector2(10.5f, posY);
 		}*/
-	
 	}
 }

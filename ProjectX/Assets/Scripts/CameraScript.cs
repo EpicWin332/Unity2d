@@ -8,6 +8,9 @@ public class CameraScript : MonoBehaviour {
 	public Texture2D playTexture;
 	public Texture2D homeTexture;
 	static public bool visible=false;
+	float originalWidth = 720f;  // define here the original resolution
+	float originalHeight = 1280f; // you used to create the GUI contents 
+	private Vector3 scale;
 
 
 	// Use this for initialization
@@ -24,7 +27,7 @@ public class CameraScript : MonoBehaviour {
 		transform.position = newCameraPosition;
 
 		if (Application.platform == RuntimePlatform.Android) {
-						if (Input.GetKey (KeyCode.Escape)) {
+						if (Input.GetKeyDown (KeyCode.Escape)) {
 				             if (Time.timeScale == 1f)
 				                {
 					            Time.timeScale = 0f;
@@ -41,17 +44,24 @@ public class CameraScript : MonoBehaviour {
 	}
 
 	void OnGUI(){
+		scale.x = Screen.width/originalWidth; // calculate hor scale
+		scale.y = Screen.height/originalHeight; // calculate vert scale
+		scale.z = 1;
+		var svMat = GUI.matrix; // save current matrix
+		// substitute matrix - only scale is altered from standard
+		GUI.matrix = Matrix4x4.TRS(Vector3.zero, Quaternion.identity, scale);
+		// draw your GUI controls here:
 
 		GUIStyle myStyle = new GUIStyle(GUI.skin.box);
-		myStyle.fontSize = 24;
+		myStyle.fontSize = 50;
 		// Make a background box
 		if(visible)
-		GUI.Box(new Rect(camera.pixelWidth / 2 - playTexture.width-25-30,camera.pixelHeight / 2 - playTexture.height / 2-30
-		                 ,playTexture.width+homeTexture.width+50+60,playTexture.height+60), "Pause",myStyle);
+		GUI.Box(new Rect(originalWidth / 2 - playTexture.width/2 - 130 - 60 ,originalHeight / 2 - playTexture.height / 2-60
+			                 ,originalWidth-(originalWidth / 2 - playTexture.width/2 - 130)*2 +120,playTexture.height+120), "Pause",myStyle);
 
 		if (GUI.Button 
-		    (new Rect (camera.pixelWidth - buttonTexture.width-2, 0  
-		           ,buttonTexture.width, buttonTexture.height), buttonTexture, GUIStyle.none)) 
+		    (new Rect 
+		 (originalWidth - buttonTexture.width-2, 0  ,buttonTexture.width, buttonTexture.height), buttonTexture, GUIStyle.none)) 
 			
 		{
 			//if (Time.timeScale == 1f)
@@ -62,14 +72,14 @@ public class CameraScript : MonoBehaviour {
 			//	Time.timeScale = 1f;
 		if (visible) {
 						if (GUI.Button 
-			                          (new Rect (camera.pixelWidth / 2 - playTexture.width-25, camera.pixelHeight / 2 - playTexture.height / 2   
+			                          (new Rect (originalWidth / 2 - playTexture.width/2 -130 , originalHeight / 2 - playTexture.height / 2   
 			                              , playTexture.width, playTexture.height), playTexture, GUIStyle.none)) 
 			            {
 								Time.timeScale = 1f;
 								visible = false;
 						}
 			if (GUI.Button 
-			    (new Rect ((camera.pixelWidth / 2) + 25, camera.pixelHeight / 2 - homeTexture.height / 2   
+			    (new Rect (originalWidth / 2 -homeTexture.width/2 + 130, originalHeight / 2 - homeTexture.height / 2   
 			           , homeTexture.width, homeTexture.height), homeTexture, GUIStyle.none)) 
 			{
 				Time.timeScale = 1f;
@@ -81,6 +91,8 @@ public class CameraScript : MonoBehaviour {
 			//Application.LoadLevel(0);
 			//return;
 		//}
-	
+		GUI.matrix = svMat; // restore matrix
 	}
+
+
 }
