@@ -9,12 +9,13 @@ public class DestroyerScript : MonoBehaviour
 		{
 			CameraScript.dead=true;
 		}
-		if (other.gameObject.transform.parent)
+		if ((other.gameObject.transform.parent) && (other.tag != "Player"))
 		{
 			Destroy (other.gameObject.transform.parent.gameObject);
 		}
 		else
 		{
+		if (other.tag != "Player")
 			Destroy (other.gameObject);
 		}
 	}
