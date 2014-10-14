@@ -20,16 +20,17 @@ public class SpawnScript : MonoBehaviour
 		y = -1f;
 		g1 = a * a * tao * tao / (-60);
 		g2 = 2 * 5*(600+30)*tao/30;
-		Spawn ();
+		//Spawn ();
 	}
-	void Spawn()
+	void Update()
 	{
 		//rigidbody2D.position = new Vector2 (2, -1);
 		System.Random rnd = new System.Random ();
 		switch(switchcase)
 		{
 			case 1:
-				Instantiate (obj [1], new Vector2(0.38f,-1f), Quaternion.identity);//учесть положение пацана
+				if(Input.GetButtonDown("Fire1"))
+					Instantiate (obj [0], new Vector2(3.08f-3.3f+5f*0.61f,1f), Quaternion.identity);//учесть положение пацана
 				switchcase=1;
 				break;
 			case 2:
@@ -40,7 +41,7 @@ public class SpawnScript : MonoBehaviour
 			break;
 		}
 			
-			Invoke ("Spawn", Random.Range (SpawnMin,SpawnMax));
+			//Invoke ("Spawn", Random.Range (SpawnMin,SpawnMax));
 		//если количество spawn элементов становится большим, то нужно прекратить генерацию
 		//нужно генерировать такие платформы, дельта, которых по x и y была бы от [
 		/*if (rnd.Next (0, 2) == 1)
