@@ -226,9 +226,11 @@ MonoBehaviour:
   - {fileID: 100000, guid: 0388e06ff0a9940169ab4c059300070d, type: 2}
   startPlatform: {fileID: 789733683}
   clone: {fileID: 0}
-  y0: 0
+  y0: -.699999988
   y: 1
   t1: 0
+  x0: 0
+  x: 0
   switchcase: 1
   counter: 1
 --- !u!23 &735260626
