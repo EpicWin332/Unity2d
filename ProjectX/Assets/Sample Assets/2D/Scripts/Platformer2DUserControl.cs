@@ -20,8 +20,10 @@ public class Platformer2DUserControl : MonoBehaviour
         if (CrossPlatformInput.GetButtonDown("Jump")) jump = true;
 #else
 		if (!CameraScript.visible && Input.GetButtonDown("Fire1")&&!((Input.mousePosition.x>Camera.main.pixelWidth-pauseImage.width-2)&&
-		                                    (Input.mousePosition.y>Camera.main.pixelHeight-pauseImage.height))) jump = true;
+		                                    (Input.mousePosition.y>Camera.main.pixelHeight-pauseImage.height)))
+			jump = true;
 #endif
+
     }
 
 	void FixedUpdate()

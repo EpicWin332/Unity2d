@@ -105,8 +105,6 @@ public class CameraScript : MonoBehaviour
 			            
 						Time.timeScale = 0f;
 				}
-		
-
 				GUI.matrix = svMat; // restore matrix
 		}	
 }
