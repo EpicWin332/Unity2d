@@ -4,33 +4,48 @@ using System.Collections;
 public class SpawnScript : MonoBehaviour 
 {
 	public GameObject[] obj;
-	public float SpawnMin =1f;
-	public float SpawnMax = 1.5f;
-	public float x,y;
-	public float a=600f;
-	public float tao=0.0223f;
-	public float g1,g2;
-	public int switchcase=2;
+	public GameObject startPlatform,clone;
+	public float y0=0,y=1,t1; //squareEquation
+	public int switchcase=1;
 	public bool counter=true;
-	// Use this for initialization
+	float SquareEquation(float y0,float y)
+	{
+		float t2;
+		t1 = (-12f + Mathf.Sqrt (12f * 12f + 4f * 15f * (y0 - y))) / (-30f);
+		t2 = (-12f - Mathf.Sqrt (12f * 12f + 4f * 15f * (y0 - y))) / (-30f);
+		if (t1 > t2)
+						return t1;
+				else
+					{
+						t1 = t2;
+						return t1;
+					}
+	}
 	void Start () 
 	{
-		//начальное положение генерируемой платформы
-		x = 2.5f;
-		y = -1f;
-		g1 = a * a * tao * tao / (-60);
-		g2 = 2 * 5*(600+30)*tao/30;
-		//Spawn ();
+		clone=Instantiate (obj [2], new Vector2(5f,1.5f), Quaternion.identity);
+		//y0 = 1.5f;
+
 	}
 	void Update()
 	{
 		//rigidbody2D.position = new Vector2 (2, -1);
-		System.Random rnd = new System.Random ();
 		switch(switchcase)
 		{
 			case 1:
-				if(Input.GetButtonDown("Fire1"))
-					Instantiate (obj [0], new Vector2(3.08f-3.3f+5f*0.61f,1f), Quaternion.identity);//учесть положение пацана
+
+				
+				{
+					t1=SquareEquation(y0,y);
+					if (clone.transform.position.x<4f)
+						Instantiate (obj [2], new Vector2(5f*t1,y-0.7f), Quaternion.identity);//ставит платформу относительно её середины
+					y0=y-0.3f;//character.rigidbody2D.position.y-0.3f;//берет координаты в середине человека поэтому -0.3
+					y=Random.Range(-1f,5f); 
+					while (y-y0>2.3F)//область в которой функция будет иметь вещественные корни
+						y=Random.Range(-1F,5F);
+
+				//print(t1);//учесть положение пацана
+				}
 				switchcase=1;
 				break;
 			case 2:

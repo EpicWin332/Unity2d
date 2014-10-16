@@ -5,7 +5,7 @@ public class MovePlatform : MonoBehaviour {
 
 	//переменная для установки макс. скорости платфоормы
 	public float maxSpeed = -5f;
-	public float endPosition = -12f;
+	public float endPosition = -20f;
 	//public GameObject targetObject;
 
 
