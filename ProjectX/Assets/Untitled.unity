@@ -237,6 +237,7 @@ MonoBehaviour:
   funRecord: 0
   switchcase: 1
   next: 0
+  prev: 0
   counter: 1
 --- !u!23 &735260626
 Renderer:
