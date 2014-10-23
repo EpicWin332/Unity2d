@@ -6,7 +6,7 @@ public class SpawnScript : MonoBehaviour
 public GameObject[] obj;
 public GameObject startPlatform, clone1,clone2;
 public float y0 = -0.4f, sY, firstY = 1f, secondY = -2f, x0 = 0, x, funRecord; //squareEquation
-public float widthOfPlatform, halfLengthOfGreat,halfLengthOfMiddle,halfLengthOfMini;
+public float standOfNull=0.7f, halfLengthOfGreat,halfLengthOfMiddle,halfLengthOfMini;
 public float gravity =30f, force=600f, tao=0.02f, t1;
 public int switchcase = 1, next, prev;
 int[] values = new int[5] {0,0,1,1,2};
@@ -46,8 +46,8 @@ void Start ()
 			t1 = SquareEquationSmall (y0, firstY,force);
 			next = rnd.Next (0, values.Length);
 			next = values [next];
-			clone1 = Instantiate (obj [next], new Vector2 (3.478378f * 2f + 5f * t1, firstY - 0.8f), Quaternion.identity) as GameObject;
-			clone2 = Instantiate (obj [next], new Vector2 (3.478378f * 2f + 5f * t1, secondY - 0.8f), Quaternion.identity) as GameObject;
+			clone1 = Instantiate (obj [next], new Vector2 (3.478378f * 2f + 5f * t1, firstY - standOfNull), Quaternion.identity) as GameObject;
+			clone2 = Instantiate (obj [next], new Vector2 (3.478378f * 2f + 5f * t1, secondY - standOfNull), Quaternion.identity) as GameObject;
 			
 			//clone1 = Instantiate (obj [0], new Vector2 (4 * 2f + 5f * t1, secondY - 0.8f), Quaternion.identity) as GameObject;
 			prev = next;
@@ -71,16 +71,16 @@ void LetClone (ref GameObject clone, ref float y)
 				next = rnd.Next (0, values.Length);
 				next = values [next];
 				if (next == 1) {
-					clone = Instantiate (obj [next], new Vector2 (clone.rigidbody2D.position.x + Random.Range (2f, 5f) + 5f * t1, y - 0.8f), Quaternion.identity) as GameObject;
+					clone = Instantiate (obj [next], new Vector2 (clone.rigidbody2D.position.x+ Random.Range(1.7f,3.4f) + 5f * t1, y - 0.8f), Quaternion.identity) as GameObject; //надо подумать
 					prev = next;
 					//clone1 = Instantiate (obj [next], new Vector2 (clone.rigidbody2D.position.x + Random.Range (0f, 0.8f) + 5f * t1, secondY - 0.8f), Quaternion.identity) as GameObject;
 				}
 				if (next == 0) {
-					clone = Instantiate (obj [next], new Vector2 (clone.rigidbody2D.position.x + Random.Range (2f, 4f) + 5f * t1, y - 0.8f), Quaternion.identity) as GameObject;
+					clone = Instantiate (obj [next], new Vector2 (clone.rigidbody2D.position.x + Random.Range (1.7f, 2.6f) + 5f * t1, y - 0.8f), Quaternion.identity) as GameObject;
 					prev = next;
 				}
 				if (next == 2) {
-					clone = Instantiate (obj [next], new Vector2 (clone.rigidbody2D.position.x + Random.Range (1f, 3.3f) + 5f * t1, y - 0.8f), Quaternion.identity) as GameObject;
+					clone = Instantiate (obj [next], new Vector2 (clone.rigidbody2D.position.x + Random.Range (1.7f, 2f) + 5f * t1, y - 0.8f), Quaternion.identity) as GameObject;
 					prev = next;
 				}
 				//clone = Instantiate (obj [next], new Vector2 (clone.rigidbody2D.position.x + Random.Range (1f, 3.3f) + 5f * t1, (firstY - 0.8f)), Quaternion.identity) as GameObject;
@@ -91,12 +91,12 @@ void LetClone (ref GameObject clone, ref float y)
 				next = rnd.Next (0, values.Length);
 				next = values [next];
 				if (next == 1) {
-					clone = Instantiate (obj [next], new Vector2 (clone.rigidbody2D.position.x + Random.Range (0f, 0.8f) + Random.Range (1f, 3.3f) + 5f * t1, y - 0.8f), Quaternion.identity) as GameObject;
+					clone = Instantiate (obj [next], new Vector2 (clone.rigidbody2D.position.x + Random.Range (0.9f, 2.6f)  + 5f * t1, y - 0.8f), Quaternion.identity) as GameObject;
 					prev = next;
 					//clone1 = Instantiate (obj [next], new Vector2 (clone.rigidbody2D.position.x + Random.Range (0f, 0.8f) + 5f * t1, secondY - 0.8f), Quaternion.identity) as GameObject;
 				}
 				if (next == 0) {
-					clone = Instantiate (obj [next], new Vector2 (clone.rigidbody2D.position.x + Random.Range (0f, 1.6f) + 5f * t1, y - 0.8f), Quaternion.identity) as GameObject;
+					clone = Instantiate (obj [next], new Vector2 (clone.rigidbody2D.position.x + Random.Range (0.9f, 1.8f) + 5f * t1, y - 0.8f), Quaternion.identity) as GameObject;
 					prev = next;
 				}
 				if (next == 2) {
@@ -108,16 +108,16 @@ void LetClone (ref GameObject clone, ref float y)
 				next = rnd.Next (0, values.Length);
 				next = values [next];
 				if (next == 1) {
-					clone = Instantiate (obj [next], new Vector2 (clone.rigidbody2D.position.x + Random.Range (1f, 3.3f) + 5f * t1, y - 0.8f), Quaternion.identity) as GameObject;
+					clone = Instantiate (obj [next], new Vector2 (clone.rigidbody2D.position.x + Random.Range (0.2f, 1.7f) + 5f * t1, y - 0.7f), Quaternion.identity) as GameObject;
 					prev = next;
 					//clone1 = Instantiate (obj [next], new Vector2 (clone.rigidbody2D.position.x + Random.Range (0f, 0.8f) + 5f * t1, secondY - 0.8f), Quaternion.identity) as GameObject;
 				}
 				if (next == 0) {
-					clone = Instantiate (obj [next], new Vector2 (clone.rigidbody2D.position.x + Random.Range (0f, 0.8f) + 5f * t1, y - 0.8f), Quaternion.identity) as GameObject;
+					clone = Instantiate (obj [next], new Vector2 (clone.rigidbody2D.position.x + Random.Range (0.2f, 1f) + 5f * t1, y - 0.7f), Quaternion.identity) as GameObject;
 					prev = next;
 				}
 				if (next == 2) {
-					clone = Instantiate (obj [next], new Vector2 (clone.rigidbody2D.position.x + 5f * t1, y - 0.8f), Quaternion.identity) as GameObject;
+					clone = Instantiate (obj [next], new Vector2 (clone.rigidbody2D.position.x + 5f * t1, y - 0.7f), Quaternion.identity) as GameObject;
 					prev = next;
 				}
 				break;
@@ -125,11 +125,20 @@ void LetClone (ref GameObject clone, ref float y)
 				break;
 			}
 			y0 = y - 0.8f;
-			y = Random.Range (0.8f, y0 + 2.3f);
-			if (y> 4.5) {
-				y = Random.Range (0.8f, y0);
+			if (clone==clone2)
+			{
+				y = Random.Range (0.8f, y0 + 2.3f);
+				if (y> 4.5f) {
+					y = Random.Range (0.8f, y0);
+				}
 			}
-			
+			else 
+			{
+				y = Random.Range (-4f, y0 + 2.3f);
+				if (y< -4f) {
+					y = Random.Range (-4f, y0);
+				}
+			}
 		}
 		
 
@@ -137,7 +146,7 @@ void LetClone (ref GameObject clone, ref float y)
 void Update ()
 {
 		LetClone (ref clone1, ref firstY);
-		//LetClone (ref clone2, secondY);
+		LetClone (ref clone2, ref secondY);
 }
 
 }

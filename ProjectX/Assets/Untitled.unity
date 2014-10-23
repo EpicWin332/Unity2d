@@ -226,19 +226,20 @@ MonoBehaviour:
   - {fileID: 100000, guid: 0388e06ff0a9940169ab4c059300070d, type: 2}
   startPlatform: {fileID: 789733683}
   clone1: {fileID: 0}
+  clone2: {fileID: 0}
   y0: -.400000006
   sY: 0
-  firstY: .200000003
+  firstY: 1
   secondY: -2
   x0: 0
   x: 0
   funRecord: 0
-  widthOfPlatform: 0
+  standOfNull: .699999988
   halfLengthOfGreat: 0
   halfLengthOfMiddle: 0
   halfLengthOfMini: 0
   gravity: 30
-  force: 400
+  force: 600
   tao: .0199999996
   t1: 0
   switchcase: 1
@@ -339,7 +340,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 8341ec2b908324fb780d7c2702526b23, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7994a23b9d80a46edb2751c3cf1a5f94, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &789733685
 Transform:
@@ -348,11 +349,11 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 789733683}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.89999998, y: -.5, z: 0}
-  m_LocalScale: {x: .400793344, y: .400000006, z: 1}
+  m_LocalPosition: {x: 3.29999995, y: -.5, z: 0}
+  m_LocalScale: {x: .699999988, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
 --- !u!61 &789733686
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -362,7 +363,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 6200000, guid: 3626fe8e008014f6bbd19bb72937b311, type: 2}
   m_IsTrigger: 0
-  m_Size: {x: 10, y: 2}
+  m_Size: {x: 10.1999998, y: .800000012}
   m_Center: {x: 0, y: 0}
 --- !u!50 &789733687
 Rigidbody2D:
@@ -628,7 +629,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 87a2357765801c34292d6718d8b4d770, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5000000, guid: 87a2357765801c34292d6718d8b4d770, type: 2}
       propertyPath: m_IsKinematic
@@ -694,6 +695,14 @@ Prefab:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: 87a2357765801c34292d6718d8b4d770, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100004, guid: 87a2357765801c34292d6718d8b4d770, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 87a2357765801c34292d6718d8b4d770, type: 2}
   m_RootGameObject: {fileID: 1749908160}
@@ -734,7 +743,7 @@ Transform:
   - {fileID: 610342581}
   - {fileID: 2066929335}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
 --- !u!61 &1749908162
 BoxCollider2D:
   m_ObjectHideFlags: 0
