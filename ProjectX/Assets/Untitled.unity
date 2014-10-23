@@ -225,16 +225,22 @@ MonoBehaviour:
   - {fileID: 100000, guid: 3a0216edb82d646be8377592a08a19ef, type: 2}
   - {fileID: 100000, guid: 0388e06ff0a9940169ab4c059300070d, type: 2}
   startPlatform: {fileID: 789733683}
-  clone: {fileID: 0}
   clone1: {fileID: 0}
   y0: -.400000006
   sY: 0
-  firstY: 1
+  firstY: .200000003
   secondY: -2
-  t1: 0
   x0: 0
   x: 0
   funRecord: 0
+  widthOfPlatform: 0
+  halfLengthOfGreat: 0
+  halfLengthOfMiddle: 0
+  halfLengthOfMini: 0
+  gravity: 30
+  force: 400
+  tao: .0199999996
+  t1: 0
   switchcase: 1
   next: 0
   prev: 0
@@ -333,7 +339,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: c8a4b1e4f18f74657b88c9d0877b78b0, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8341ec2b908324fb780d7c2702526b23, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &789733685
 Transform:
@@ -342,8 +348,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 789733683}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.29999995, y: -.400000006, z: 0}
-  m_LocalScale: {x: .699999988, y: .800122499, z: 1}
+  m_LocalPosition: {x: 1.89999998, y: -.5, z: 0}
+  m_LocalScale: {x: .400793344, y: .400000006, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
@@ -356,7 +362,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 6200000, guid: 3626fe8e008014f6bbd19bb72937b311, type: 2}
   m_IsTrigger: 0
-  m_Size: {x: 10.2399998, y: .639999986}
+  m_Size: {x: 10, y: 2}
   m_Center: {x: 0, y: 0}
 --- !u!50 &789733687
 Rigidbody2D:
