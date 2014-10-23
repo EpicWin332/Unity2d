@@ -20,6 +20,8 @@ public class PlatformerCharacter2D : MonoBehaviour
 	float ceilingRadius = .01f;							// Radius of the overlap circle to determine if the player can stand up
 	Animator anim;										// Reference to the player's animator component.
 	bool doubleJump=false;
+	
+
 
     void Awake()
 	{
@@ -48,52 +50,55 @@ public class PlatformerCharacter2D : MonoBehaviour
 	}
 
 
-	public void Move(float move, bool crouch, bool jump)
+	public void Move(float move, bool crouch, bool jump, bool swipe)
 	{
 
 
-		// If crouching, check to see if the character can stand up
-		if(!crouch && anim.GetBool("Crouch"))
-		{
-			// If the character has a ceiling preventing them from standing up, keep them crouching
-			if( Physics2D.OverlapCircle(ceilingCheck.position, ceilingRadius, whatIsGround))
-				crouch = true;
-		}
+				// If crouching, check to see if the character can stand up
+				if (!crouch && anim.GetBool ("Crouch")) {
+						// If the character has a ceiling preventing them from standing up, keep them crouching
+						if (Physics2D.OverlapCircle (ceilingCheck.position, ceilingRadius, whatIsGround))
+								crouch = true;
+				}
 
-		// Set whether or not the character is crouching in the animator
-		anim.SetBool("Crouch", crouch);
+				// Set whether or not the character is crouching in the animator
+				anim.SetBool ("Crouch", crouch);
 
-		//only control the player if grounded or airControl is turned on
-		if(grounded || airControl)
-		{
-			// Reduce the speed if crouching by the crouchSpeed multiplier
-			move = (crouch ? move * crouchSpeed : move);
+				//only control the player if grounded or airControl is turned on
+				if (grounded || airControl) {
+						// Reduce the speed if crouching by the crouchSpeed multiplier
+						move = (crouch ? move * crouchSpeed : move);
 
-			// The Speed animator parameter is set to the absolute value of the horizontal input.
-			anim.SetFloat("Speed", Mathf.Abs(move));
+						// The Speed animator parameter is set to the absolute value of the horizontal input.
+						anim.SetFloat ("Speed", Mathf.Abs (move));
 
-			// Move the character
-			rigidbody2D.velocity = new Vector2(move * maxSpeed, rigidbody2D.velocity.y);
+						// Move the character
+						rigidbody2D.velocity = new Vector2 (move * maxSpeed, rigidbody2D.velocity.y);
 			
-			// If the input is moving the player right and the player is facing left...
-			if(move > 0 && !facingRight)
+						// If the input is moving the player right and the player is facing left...
+						if (move > 0 && !facingRight)
 				// ... flip the player.
-				Flip();
+								Flip ();
 			// Otherwise if the input is moving the player left and the player is facing right...
-			else if(move < 0 && facingRight)
+			else if (move < 0 && facingRight)
 				// ... flip the player.
-				Flip();
-		}
+								Flip ();
+				}
 
-        // If the player should jump...
-        if ((grounded || !doubleJump) && jump) {
-			rigidbody2D.velocity = new Vector2(rigidbody2D.velocity.x,0);
-            // Add a vertical force to the player.
-            anim.SetBool("Ground", false);
-            rigidbody2D.AddForce(new Vector2(0f, jumpForce));
-			if(!grounded)
-				doubleJump=true;
-        }
+				// If the player should jump...
+				if (grounded && jump) {
+						rigidbody2D.velocity = new Vector2 (rigidbody2D.velocity.x, 0);
+						// Add a vertical force to the player.
+						anim.SetBool ("Ground", false);
+						rigidbody2D.AddForce(new Vector2(0f, jumpForce));
+						//if (!grounded)
+								//doubleJump = true;
+				}
+				if (!grounded && swipe) {
+			           // rigidbody2D.velocity = new Vector2 (rigidbody2D.velocity.x, 0);
+			            rigidbody2D.AddForce(new Vector2(0f, -600f));
+		                                }
+
 	}
 
 	

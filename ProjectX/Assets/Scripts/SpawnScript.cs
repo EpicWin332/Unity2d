@@ -138,6 +138,9 @@ void LetClone (ref GameObject clone, ref float y)
 				if (y< -4f) {
 					y = Random.Range (-4f, y0);
 				}
+				if (y>-1) {
+					y--;
+				}
 			}
 		}
 		
