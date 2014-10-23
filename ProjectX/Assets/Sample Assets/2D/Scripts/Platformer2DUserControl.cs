@@ -82,8 +82,9 @@ public class Platformer2DUserControl : MonoBehaviour
 			
 								//create vector from the two points
 								currentSwipe = new Vector3 (secondPressPos.x - firstPressPos.x, secondPressPos.y - firstPressPos.y);
+
 			if (currentSwipe.magnitude < 30f) {
-				return;
+                 return;
 			}
 								//normalize the 2d vector
 								currentSwipe.Normalize ();								

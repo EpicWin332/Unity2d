@@ -9,7 +9,7 @@ public float y0 = -0.4f, sY, firstY = 1f, secondY = -2f, x0 = 0, x, funRecord; /
 public float standOfNull=0.7f, halfLengthOfGreat,halfLengthOfMiddle,halfLengthOfMini;
 public float gravity =30f, force=600f, tao=0.02f, t1;
 public int switchcase = 1, next, prev;
-int[] values = new int[5] {0,0,1,1,2};
+int[] values = new int[5] {1,1,1,1,1};
 public bool counter = true;
 
 float SquareEquationBig (float y0, float y)//пока не работает двойной прыжок
@@ -71,7 +71,7 @@ void LetClone (ref GameObject clone, ref float y)
 				next = rnd.Next (0, values.Length);
 				next = values [next];
 				if (next == 1) {
-					clone = Instantiate (obj [next], new Vector2 (clone.rigidbody2D.position.x+ Random.Range(1.7f,3.4f) + 5f * t1, y - 0.8f), Quaternion.identity) as GameObject; //надо подумать
+					clone = Instantiate (obj [next], new Vector2 (clone.rigidbody2D.position.x+ Random.Range(2f,3.6f) + 5f * t1, y - 0.8f), Quaternion.identity) as GameObject; //надо подумать
 					prev = next;
 					//clone1 = Instantiate (obj [next], new Vector2 (clone.rigidbody2D.position.x + Random.Range (0f, 0.8f) + 5f * t1, secondY - 0.8f), Quaternion.identity) as GameObject;
 				}
@@ -138,9 +138,7 @@ void LetClone (ref GameObject clone, ref float y)
 				if (y< -4f) {
 					y = Random.Range (-4f, y0);
 				}
-				if (y>-1) {
-					y--;
-				}
+
 			}
 		}
 		
