@@ -112,4 +112,20 @@ public class PlatformerCharacter2D : MonoBehaviour
 		theScale.x *= -1;
 		transform.localScale = theScale;
 	}
+
+	public float getJumpForce()
+	{
+		return jumpForce;
+		}
+
+	
+	public void setJumpForce(float jumpForce)
+	{
+		this.jumpForce = jumpForce;
+	}
+
+	public bool getGrounded()
+	{
+		return grounded;
+		}
 }
