@@ -157,6 +157,10 @@ Prefab:
       propertyPath: startPlatform
       value: 
       objectReference: {fileID: 789733683}
+    - target: {fileID: 11400000, guid: 4562ac9dbb6c743fa954427b1d8813ec, type: 2}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1749908160}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4562ac9dbb6c743fa954427b1d8813ec, type: 2}
   m_RootGameObject: {fileID: 735260624}
@@ -227,6 +231,7 @@ MonoBehaviour:
   startPlatform: {fileID: 789733683}
   clone1: {fileID: 0}
   clone2: {fileID: 0}
+  player: {fileID: 1749908160}
   y0: -.400000006
   sY: 0
   firstY: 1
@@ -235,9 +240,9 @@ MonoBehaviour:
   x: 0
   funRecord: 0
   standOfNull: .699999988
-  halfLengthOfGreat: 0
-  halfLengthOfMiddle: 0
-  halfLengthOfMini: 0
+  halfLengthOfGreat: 2
+  halfLengthOfMiddle: .949999988
+  halfLengthOfMini: .5
   gravity: 30
   force: 600
   tao: .0199999996
@@ -723,6 +728,7 @@ GameObject:
   - 114: {fileID: 1749908164}
   - 114: {fileID: 1749908163}
   - 61: {fileID: 1749908162}
+  - 114: {fileID: 1749908169}
   m_Layer: 9
   m_Name: 2D Character
   m_TagString: Player
@@ -855,6 +861,17 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 8fb98a6035269e64a998f9b56828fc4f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!114 &1749908169
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1749908160}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87162c8af527448d9b777157ec5a1254, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1835455426
 GameObject:
   m_ObjectHideFlags: 0
