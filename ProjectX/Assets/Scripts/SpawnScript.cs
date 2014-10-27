@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 //using MovePlatform.cs;
 public class SpawnScript : MonoBehaviour
@@ -40,6 +40,8 @@ float SquareEquationSmall (float y0, float y, float force)//почему бы н
 
 void Start ()
 {
+		// for albert
+		obj [1].GetComponent<Gravity> ().getGravity ();
 	funRecord = 2.3f;
 	System.Random rnd = new System.Random ();
 	if (startPlatform.transform.position.x < 3.5f) {

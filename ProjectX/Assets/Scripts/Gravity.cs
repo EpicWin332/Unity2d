@@ -15,5 +15,15 @@ public class Gravity : MonoBehaviour
 		{
 	
 		}
+
+	public int getGravity()
+	{
+		return gravity;
+	}
+
+	public void setGravity(int gravity)
+	{
+		this.gravity = gravity;
+	}
 }
 
