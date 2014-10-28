@@ -24,8 +24,8 @@ float SquareEquationBig (float y0, float y)//пока не работает дв
 			return t1;
 	}}
 
-
-float SquareEquationSmall (float y0, float y, int force)//почему бы не передать y1,y2,y3 и в let clone использовать goto
+	// R: Использовать goto, это плохо
+float SquareEquationSmall (float y0, float y, int force)//почему бы не передать y1,y2,y3 и в let clone использовать goto;
 {
 	float t2;
 	t1 = (-force*tao + Mathf.Sqrt (Mathf.Pow(force*tao,2f) + 4f * 0.5f*gravity * (y0 - y - 0.5f*force*tao*tao))) / (-gravity);
@@ -64,6 +64,8 @@ void LetClone (ref GameObject clone, ref float y)
 {
 		System.Random rnd = new System.Random ();
 		t1 = SquareEquationSmall (y0, y, obj [next].GetComponent<Gravity> ().getGravity ());
+		// TODO: FOR Albert: почему-то ставится гравитация следующей платформы, а не текущей
+		SetGravity.setGravity(obj [prev].GetComponent<Gravity> ().getGravity ());
 		if (float.IsNaN(t1))
 			t1=0.4f;
 		//ЗАВИСИМОСТЬ НУЖНО ДЕЛАТЬ ОТ ПРЕДЫДУЩЕЙ ПЛАТФОРМЫ!			
