@@ -37,6 +37,8 @@ public class PlatformerCharacter2D : MonoBehaviour
 	{
 		// The player is grounded if a circlecast to the groundcheck position hits anything designated as ground
 		grounded = Physics2D.OverlapCircle(groundCheck.position, groundedRadius, whatIsGround);
+		//http://docs.unity3d.com/ScriptReference/Collider2D.html
+		//http://answers.unity3d.com/questions/20049/detecting-collisions-between-blocks.html
 		anim.SetBool("Ground", grounded);
 
 		// Set the vertical animation

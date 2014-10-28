@@ -7,8 +7,8 @@ public GameObject[] obj;
 public GameObject startPlatform, clone1,clone2,player;
 public float y0 = -0.4f, sY, firstY = 1f, secondY = -2f, x0 = 0, x, funRecord; //squareEquation
 public float standOfNull=0.7f, halfLengthOfGreat=2f,halfLengthOfMiddle=0.95f,halfLengthOfMini=0.5f;
-public float gravity =30f, tao=0.02f, t1;
-public int switchcase = 1, next, prev;
+public float gravity =30f, tao=0.02f, t1,force;
+public int switchcase = 1, beforePrev=0, next, prev;
 int[] values = new int[5] {0,0,1,1,2}; //0-middle 1-greate 2-mini
 public bool counter = true;
 
@@ -49,7 +49,7 @@ void Start ()
 			next = rnd.Next (0, values.Length);
 			next = values [next];
 			clone1 = Instantiate (obj [next], new Vector2 (3.478378f * 2f + 5f * t1, firstY - standOfNull), Quaternion.identity) as GameObject;
-			clone2 = Instantiate (obj [next], new Vector2 (3.478378f * 2f + 5f * t1, secondY - standOfNull), Quaternion.identity) as GameObject;
+			//clone2 = Instantiate (obj [next], new Vector2 (3.478378f * 2f + 5f * t1, secondY - standOfNull), Quaternion.identity) as GameObject;
 			
 			//clone1 = Instantiate (obj [0], new Vector2 (4 * 2f + 5f * t1, secondY - 0.8f), Quaternion.identity) as GameObject;
 			prev = next;
@@ -63,13 +63,17 @@ void Start ()
 void LetClone (ref GameObject clone, ref float y)
 {
 		System.Random rnd = new System.Random ();
-		t1 = SquareEquationSmall (y0, y, obj [next].GetComponent<Gravity> ().getGravity ());
-		// TODO: FOR Albert: почему-то ставится гравитация следующей платформы, а не текущей
+		t1 = SquareEquationSmall (y0, y, obj [prev].GetComponent<Gravity> ().getGravity ());
+		force = obj [prev].GetComponent<Gravity> ().getGravity ();
+
 		SetGravity.setGravity(obj [prev].GetComponent<Gravity> ().getGravity ());
+		
 		if (float.IsNaN(t1))
 			t1=0.4f;
 		//ЗАВИСИМОСТЬ НУЖНО ДЕЛАТЬ ОТ ПРЕДЫДУЩЕЙ ПЛАТФОРМЫ!			
 		if (clone.rigidbody2D.position.x < 4f) {			//ГЕНЕРИРУЕМ ДО ТОГО КАК ОН БУДЕТ В УКАЗАННОЙ ТОЧКЕ 
+			// TODO: FOR Albert: почему-то ставится гравитация следующей платформы, а не текущей
+
 			switch (prev) {
 			case 1:
 				next = rnd.Next (0, values.Length);
@@ -87,6 +91,9 @@ void LetClone (ref GameObject clone, ref float y)
 					clone = Instantiate (obj [next], new Vector2 (clone.rigidbody2D.position.x + Random.Range (halfLengthOfGreat, halfLengthOfGreat+halfLengthOfMini) + 5f * t1, y - standOfNull), Quaternion.identity) as GameObject;
 					//prev = next;
 				}
+				// TODO: FOR Albert: почему-то ставится гравитация следующей платформы, а не текущей
+
+
 				prev=next;
 				//clone = Instantiate (obj [next], new Vector2 (clone.rigidbody2D.position.x + Random.Range (1f, 3.3f) + 5f * t1, (firstY - 0.8f)), Quaternion.identity) as GameObject;
 				//clone1 = Instantiate (obj [next], new Vector2 (clone.rigidbody2D.position.x + Random.Range (1f, 3.3f) + 5f * t1, (secondY - 0.8f)), Quaternion.identity) as GameObject;
@@ -97,17 +104,19 @@ void LetClone (ref GameObject clone, ref float y)
 				next = values [next];
 				if (next == 1) {
 					clone = Instantiate (obj [next], new Vector2 (clone.rigidbody2D.position.x + Random.Range (halfLengthOfMiddle, halfLengthOfMiddle+halfLengthOfGreat)  + 5f * t1, y - standOfNull), Quaternion.identity) as GameObject;
-					prev = next;
+					//prev = next;
 					//clone1 = Instantiate (obj [next], new Vector2 (clone.rigidbody2D.position.x + Random.Range (0f, 0.8f) + 5f * t1, secondY - 0.8f), Quaternion.identity) as GameObject;
 				}
 				if (next == 0) {
 					clone = Instantiate (obj [next], new Vector2 (clone.rigidbody2D.position.x + Random.Range (halfLengthOfMiddle, 2*halfLengthOfMiddle) + 5f * t1, y - standOfNull), Quaternion.identity) as GameObject;
-					prev = next;
+					//prev = next;
 				}
 				if (next == 2) {
 					clone = Instantiate (obj [next], new Vector2 (clone.rigidbody2D.position.x +Random.Range (halfLengthOfMiddle,halfLengthOfMiddle+halfLengthOfMini) + 5f * t1, y - standOfNull), Quaternion.identity) as GameObject;
-					prev = next;
+					//prev = next;
 				}
+				// TODO: FOR Albert: почему-то ставится гравитация следующей платформы, а не текущей
+				prev = next;
 				break;
 			case 2:
 				next = rnd.Next (0, values.Length);
@@ -119,12 +128,15 @@ void LetClone (ref GameObject clone, ref float y)
 				}
 				if (next == 0) {
 					clone = Instantiate (obj [next], new Vector2 (clone.rigidbody2D.position.x + Random.Range (halfLengthOfMini, halfLengthOfMini+halfLengthOfMiddle) + 5f * t1, y - standOfNull), Quaternion.identity) as GameObject;
-					prev = next;
+					//prev = next;
 				}
 				if (next == 2) {
 					clone = Instantiate (obj [next], new Vector2 (clone.rigidbody2D.position.x+Random.Range(halfLengthOfMini, 2*halfLengthOfMini) + 5f * t1, y - standOfNull), Quaternion.identity) as GameObject;
-					prev = next;
+					//prev = next;
 				}
+				// TODO: FOR Albert: почему-то ставится гравитация следующей платформы, а не текущей
+
+				prev=next;
 				break;
 			default:
 				break;

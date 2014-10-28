@@ -3,7 +3,7 @@ using System.Collections;
 
 public class SetGravity : MonoBehaviour {
 	private PlatformerCharacter2D character;
-	private static float gravity=0;
+	private static float gravity=600;
 	// Use this for initialization
 	void Awake()
 	{
