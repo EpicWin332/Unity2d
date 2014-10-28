@@ -7,7 +7,7 @@ public GameObject[] obj;
 public GameObject startPlatform, clone1,clone2,player;
 public float y0 = -0.4f, sY, firstY = 1f, secondY = -2f, x0 = 0, x, funRecord; //squareEquation
 public float standOfNull=0.7f, halfLengthOfGreat=2f,halfLengthOfMiddle=0.95f,halfLengthOfMini=0.5f;
-public float gravity =30f, force=600f, tao=0.02f, t1;
+public float gravity =30f, tao=0.02f, t1;
 public int switchcase = 1, next, prev;
 int[] values = new int[5] {0,0,1,1,2}; //0-middle 1-greate 2-mini
 public bool counter = true;
@@ -25,7 +25,7 @@ float SquareEquationBig (float y0, float y)//пока не работает дв
 	}}
 
 
-float SquareEquationSmall (float y0, float y, float force)//почему бы не передать y1,y2,y3 и в let clone использовать goto
+float SquareEquationSmall (float y0, float y, int force)//почему бы не передать y1,y2,y3 и в let clone использовать goto
 {
 	float t2;
 	t1 = (-force*tao + Mathf.Sqrt (Mathf.Pow(force*tao,2f) + 4f * 0.5f*gravity * (y0 - y - 0.5f*force*tao*tao))) / (-gravity);
@@ -41,11 +41,11 @@ float SquareEquationSmall (float y0, float y, float force)//почему бы н
 void Start ()
 {
 		// for albert
-		obj [1].GetComponent<Gravity> ().getGravity ();
+	obj [1].GetComponent<Gravity> ().getGravity ();
 	funRecord = 2.3f;
 	System.Random rnd = new System.Random ();
 	if (startPlatform.transform.position.x < 3.5f) {
-			t1 = SquareEquationSmall (y0, firstY,force);
+			t1 = SquareEquationSmall (y0, firstY,600);
 			next = rnd.Next (0, values.Length);
 			next = values [next];
 			clone1 = Instantiate (obj [next], new Vector2 (3.478378f * 2f + 5f * t1, firstY - standOfNull), Quaternion.identity) as GameObject;
@@ -63,7 +63,7 @@ void Start ()
 void LetClone (ref GameObject clone, ref float y)
 {
 		System.Random rnd = new System.Random ();
-		t1 = SquareEquationSmall (y0, y, 600);
+		t1 = SquareEquationSmall (y0, y, obj [next].GetComponent<Gravity> ().getGravity ());
 		if (float.IsNaN(t1))
 			t1=0.4f;
 		//ЗАВИСИМОСТЬ НУЖНО ДЕЛАТЬ ОТ ПРЕДЫДУЩЕЙ ПЛАТФОРМЫ!			
