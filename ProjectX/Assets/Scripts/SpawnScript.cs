@@ -66,7 +66,7 @@ void LetClone (ref GameObject clone, ref float y)
 		t1 = SquareEquationSmall (y0, y, obj [prev].GetComponent<Gravity> ().getGravity ());
 		force = obj [prev].GetComponent<Gravity> ().getGravity ();
 
-		SetGravity.setGravity(obj [prev].GetComponent<Gravity> ().getGravity ());
+		//SetGravity.setGravity(obj [prev].GetComponent<Gravity> ().getGravity ());
 		
 		if (float.IsNaN(t1))
 			t1=0.4f;

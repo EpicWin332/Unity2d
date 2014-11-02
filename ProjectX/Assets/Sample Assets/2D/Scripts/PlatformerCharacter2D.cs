@@ -1,4 +1,6 @@
 ﻿using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
 
 public class PlatformerCharacter2D : MonoBehaviour 
 {
@@ -12,7 +14,10 @@ public class PlatformerCharacter2D : MonoBehaviour
 	
 	[SerializeField] bool airControl = false;			// Whether or not a player can steer while jumping;
 	[SerializeField] LayerMask whatIsGround;			// A mask determining what is ground to the character
-	
+
+	GameObject greatePosition;
+	GameObject middlePosition;
+	GameObject miniPosition;
 	Transform groundCheck;								// A position marking where to check if the player is grounded.
 	float groundedRadius = 1f;							// Radius of the overlap circle to determine if grounded
 	bool grounded = false;								// Whether or not the player is grounded.
@@ -20,7 +25,7 @@ public class PlatformerCharacter2D : MonoBehaviour
 	float ceilingRadius = .01f;							// Radius of the overlap circle to determine if the player can stand up
 	Animator anim;										// Reference to the player's animator component.
 	bool doubleJump=false;
-	
+
 
 
     void Awake()
@@ -35,6 +40,7 @@ public class PlatformerCharacter2D : MonoBehaviour
 
 	void FixedUpdate()
 	{
+		collideWithPlatforms ();
 		// The player is grounded if a circlecast to the groundcheck position hits anything designated as ground
 		grounded = Physics2D.OverlapCircle(groundCheck.position, groundedRadius, whatIsGround);
 		//http://docs.unity3d.com/ScriptReference/Collider2D.html
@@ -51,6 +57,27 @@ public class PlatformerCharacter2D : MonoBehaviour
 		transform.position = position;*/
 	}
 
+	private bool isIntersection(Vector2 a, Vector2 b, int radius){
+		if (Mathf.Sqrt (Mathf.Pow((a.x - b.x),2) + Mathf.Pow((a.y - b.y),2)) <= radius) {
+			return true;
+				} else {
+			return false;
+				}
+		}
+
+	private void collideWithPlatforms(){
+		ArrayList arrayList = new ArrayList ();
+		arrayList.AddRange (GameObject.FindGameObjectsWithTag ("greatePlatform"));
+		arrayList.AddRange (GameObject.FindGameObjectsWithTag ("middlePlatform"));
+		arrayList.AddRange (GameObject.FindGameObjectsWithTag ("miniPlatform"));
+		foreach(GameObject gameObject in arrayList)
+		{
+			if (isIntersection(groundCheck.position, gameObject.transform.position, 2)) {
+				SetGravity.setGravity(gameObject.GetComponent<Gravity> ().getGravity ());
+			}
+		}
+
+	}
 
 	public void Move(float move, bool crouch, bool jump, bool swipe)
 	{
