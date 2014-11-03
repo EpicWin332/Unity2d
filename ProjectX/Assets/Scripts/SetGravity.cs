@@ -3,7 +3,7 @@ using System.Collections;
 
 public class SetGravity : MonoBehaviour {
 	private PlatformerCharacter2D character;
-	private static float gravity=600;
+	private static float gravity=350;
 	// Use this for initialization
 	void Awake()
 	{
@@ -16,7 +16,9 @@ public class SetGravity : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-			character.setJumpForce(gravity);
+		if (gravity != character.getJumpForce ()) {
+						character.setJumpForce (gravity);
+				}
 	}
 
 	public static float getGravity(){

@@ -72,7 +72,7 @@ public class PlatformerCharacter2D : MonoBehaviour
 		arrayList.AddRange (GameObject.FindGameObjectsWithTag ("miniPlatform"));
 		foreach(GameObject gameObject in arrayList)
 		{
-			if (isIntersection(groundCheck.position, gameObject.transform.position, 2)) {
+			if ((gameObject.rigidbody2D!=null)&&(isIntersection(groundCheck.position, gameObject.transform.position, 1))) {
 				SetGravity.setGravity(gameObject.GetComponent<Gravity> ().getGravity ());
 			}
 		}
