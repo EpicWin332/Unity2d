@@ -65,8 +65,8 @@ void LetClone (ref GameObject clone, ref float y)
 		print(t1);
 		//SetGravity.setGravity(obj [prev].GetComponent<Gravity> ().getGravity ());
 		
-		if (float.IsNaN(t1))
-			t1=0.4f;
+		//if (float.IsNaN(t1))
+			//t1=0.4f;
 		//ЗАВИСИМОСТЬ НУЖНО ДЕЛАТЬ ОТ ПРЕДЫДУЩЕЙ ПЛАТФОРМЫ!			
 		if (clone.rigidbody2D.position.x < 4f) {			//ГЕНЕРИРУЕМ ДО ТОГО КАК ОН БУДЕТ В УКАЗАННОЙ ТОЧКЕ 
 			// TODO: FOR Albert: почему-то ставится гравитация следующей платформы, а не текущей
@@ -141,7 +141,7 @@ void LetClone (ref GameObject clone, ref float y)
 			y0 = y;
 
 			y = Random.Range (y0, y0);
-			y0 = y-standOfNull;
+			//y0 = y-standOfNull;
 				//if (y> 4.5f) {
 					//y = Random.Range (0.8f, y0);
 
