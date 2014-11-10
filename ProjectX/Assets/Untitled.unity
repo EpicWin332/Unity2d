@@ -246,6 +246,7 @@ MonoBehaviour:
   tao: .0199999996
   t1: 0
   force: 0
+  extremum: 0
   switchcase: 1
   beforePrev: 0
   next: 0
