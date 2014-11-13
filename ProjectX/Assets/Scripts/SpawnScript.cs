@@ -7,7 +7,7 @@ public GameObject[] obj;
 public GameObject startPlatform, clone1,clone2,player;
 public float y0, firstY = 1f, x0 = 0, x; //squareEquation
 public float standOfNull=0.3f, halfLengthOfGreat=2f,halfLengthOfMiddle=0.8f,halfLengthOfMini=0.4f;
-public float gravity =30f, tao=0.02f, t1,t2,force, extremum,platSpeed=5f;
+public float gravity =30f, tao=0.02f, t1,t2,force, extremum,platSpeed=-1*MovePlatform.maxSpeed;
 public int switchcase = 1, next, prev, letSlide=0;
 int[] values = new int[5] {0,0,1,1,2}; //0-middle 1-greate 2-mini
 public bool counter = true;
@@ -29,6 +29,7 @@ float SquareEquationSmall (float y0, float y, int force)
 
 void Start ()
 {
+	platSpeed = -1 * MovePlatform.maxSpeed;
 	t1=0;
 	//задаем гравитацию
 	//obj [1].GetComponent<Gravity> ().getGravity ();
@@ -49,7 +50,7 @@ void LetClone (ref GameObject clone, ref float y)
 {
 		System.Random rnd = new System.Random ();
 		t1 = SquareEquationSmall (y0, y, obj [prev].GetComponent<Gravity> ().getGravity ());
-		print(t1);
+		//print(t1);
 		if (float.IsNaN(t1))
 		{
 			t1=0.1f;
@@ -139,6 +140,7 @@ void LetClone (ref GameObject clone, ref float y)
 }
 void Update ()
 {
+		platSpeed = -1 * MovePlatform.maxSpeed;
 		LetClone (ref clone1, ref firstY);
 }
 
