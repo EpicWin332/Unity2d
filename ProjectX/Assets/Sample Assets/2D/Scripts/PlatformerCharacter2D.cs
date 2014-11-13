@@ -67,7 +67,7 @@ public class PlatformerCharacter2D : MonoBehaviour
 
 	private void collideWithPlatforms(){
 		ArrayList arrayList = new ArrayList ();
-		arrayList.AddRange (GameObject.FindGameObjectsWithTag ("greatePlatform"));
+		arrayList.AddRange (GameObject.FindGameObjectsWithTag ("greatPlatform"));
 		arrayList.AddRange (GameObject.FindGameObjectsWithTag ("middlePlatform"));
 		arrayList.AddRange (GameObject.FindGameObjectsWithTag ("miniPlatform"));
 		foreach(GameObject gameObject in arrayList)
