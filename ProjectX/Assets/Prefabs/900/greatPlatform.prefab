@@ -9,13 +9,13 @@ GameObject:
   m_Component:
   - 4: {fileID: 400000}
   - 212: {fileID: 21200000}
-  - 61: {fileID: 6100000}
   - 50: {fileID: 5000000}
+  - 61: {fileID: 6100000}
   - 114: {fileID: 11400000}
   - 114: {fileID: 11400002}
-  m_Layer: 8
-  m_Name: middlePlatform
-  m_TagString: middlePlatform
+  m_Layer: 0
+  m_Name: greatPlatform
+  m_TagString: greatPlatform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -27,8 +27,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.54370832, y: -5.24463367, z: 0}
-  m_LocalScale: {x: .200000003, y: .459899992, z: 1}
+  m_LocalPosition: {x: 8.54734421, y: -5.36828518, z: 0}
+  m_LocalScale: {x: .459941953, y: .459941953, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -56,22 +56,9 @@ BoxCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 6200000, guid: 3626fe8e008014f6bbd19bb72937b311, type: 2}
   m_IsTrigger: 0
-  m_Size: {x: 9, y: .639999986}
+  m_Size: {x: 9, y: .800000012}
   m_Center: {x: 0, y: 0}
 --- !u!114 &11400000
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100000}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bbeeb63b3b03e41cf954ebf77e0206d2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxSpeed: -5
-  endPosition: -12
---- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -82,7 +69,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c32d98b62b8a7a488f37d573f2907e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gravity: 600
+  gravity: 900
+--- !u!114 &11400002
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbeeb63b3b03e41cf954ebf77e0206d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  endPosition: -12
+  timer: 1
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1

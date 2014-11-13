@@ -8,8 +8,9 @@ public GameObject startPlatform, clone1,clone2,player;
 public float y0, firstY = 1f, x0 = 0, x; //squareEquation
 public float standOfNull=0.3f, halfLengthOfGreat=2f,halfLengthOfMiddle=0.8f,halfLengthOfMini=0.4f;
 public float gravity =30f, tao=0.02f, t1,t2,force, extremum,platSpeed=-1*MovePlatform.maxSpeed;
-public int switchcase = 1, next, prev, letSlide=0;
-int[] values = new int[5] {0,0,1,1,2}; //0-middle 1-greate 2-mini
+public int switchcase = 1, next, prev,prevSize,nextSize, letSlide=0;
+int[] values = new int[15] {0,0,1,1,2,3,3,4,4,5,6,6,7,7,8};//0-great 1-mini 2-mini
+//int[] values = new int[5] {2,2,2,2,2};
 public bool counter = true;
 //-gt^2/2+a*tao*t+(y0-a*tao^2/2-y)=0
 
@@ -46,6 +47,26 @@ void Start ()
 	}
 
 }
+int setSize(int value)
+{
+		if ((value==0)||(value==3)||(value==6))
+			return 0;
+		if ((value==1)||(value==4)||(value==7))
+			return 1;
+		if ((value==2)||(value==5)||(value==8))
+			return 2;
+		return 0;
+}
+float setExtr(int value)
+{
+		if ((value==0)||(value==1)||(value==2))
+			return 4f;
+		if ((value==3)||(value==4)||(value==5))
+			return 2.2f;
+		if ((value==6)||(value==7)||(value==8))
+			return 0.9f;
+		return 0;
+}
 void LetClone (ref GameObject clone, ref float y)
 {
 		System.Random rnd = new System.Random ();
@@ -73,60 +94,62 @@ void LetClone (ref GameObject clone, ref float y)
 		}
 
 		if (clone.rigidbody2D.position.x < 4f) {			//ГЕНЕРИРУЕМ ДО ТОГО КАК ОН БУДЕТ В УКАЗАННОЙ ТОЧКЕ 
+			prevSize=setSize(prev);
 
-
-			switch (prev) {
-			case 1:
+			switch (prevSize) {
+			case 0:
 				next = rnd.Next (0, values.Length);
 				next = values [next];
-				if (next == 1) {
+				nextSize=setSize(next);
+				if (nextSize == 0) {
 					clone = Instantiate (obj [next], new Vector2 (clone.rigidbody2D.position.x+ Random.Range(halfLengthOfGreat,2*halfLengthOfGreat) + platSpeed * t1, y), Quaternion.identity) as GameObject; //5-скорость платформы
 				}
-				if (next == 0) {
+				if (nextSize == 1) {
 					clone = Instantiate (obj [next], new Vector2 (clone.rigidbody2D.position.x + Random.Range (halfLengthOfGreat, halfLengthOfGreat+halfLengthOfMiddle) + platSpeed * t1, y), Quaternion.identity) as GameObject;
 
 				}
-				if (next == 2) {
+				if (nextSize == 2) {
 					clone = Instantiate (obj [next], new Vector2 (clone.rigidbody2D.position.x + Random.Range (halfLengthOfGreat, halfLengthOfGreat+halfLengthOfMini) + platSpeed * t1, y), Quaternion.identity) as GameObject;
 
 				}
 
 
 				prev=next;
-				extremum=2.2f;
+				extremum=setExtr(prev);
 				break;
-			case 0:
+			case 1:
 				next = rnd.Next (0, values.Length);
 				next = values [next];
-				if (next == 1) {
+				nextSize=setSize(next);
+				if (nextSize == 0) {
 					clone = Instantiate (obj [next], new Vector2 (clone.rigidbody2D.position.x + Random.Range (halfLengthOfMiddle, halfLengthOfMiddle+halfLengthOfGreat)  + platSpeed * t1, y), Quaternion.identity) as GameObject;
 				}
-				if (next == 0) {
+				if (nextSize == 1) {
 					clone = Instantiate (obj [next], new Vector2 (clone.rigidbody2D.position.x + Random.Range (halfLengthOfMiddle, 2*halfLengthOfMiddle) + platSpeed * t1, y ), Quaternion.identity) as GameObject;
 				}
-				if (next == 2) {
+				if (nextSize == 2) {
 					clone = Instantiate (obj [next], new Vector2 (clone.rigidbody2D.position.x +Random.Range (halfLengthOfMiddle,halfLengthOfMiddle+halfLengthOfMini) + platSpeed * t1, y ), Quaternion.identity) as GameObject;
 				}
 				prev = next;
-				extremum=3f;
+				extremum=setExtr(prev);
 				
 				break;
 			case 2:
 				next = rnd.Next (0, values.Length);
 				next = values [next];
-				if (next == 1) {
+				nextSize=setSize(next);
+				if (nextSize == 0) {
 					clone = Instantiate (obj [next], new Vector2 (clone.rigidbody2D.position.x + Random.Range (halfLengthOfMini, halfLengthOfMini+halfLengthOfGreat) + platSpeed * t1, y ), Quaternion.identity) as GameObject;
-					prev = next;
 				}
-				if (next == 0) {
+				if (nextSize == 1) {
 					clone = Instantiate (obj [next], new Vector2 (clone.rigidbody2D.position.x + Random.Range (halfLengthOfMini, halfLengthOfMini+halfLengthOfMiddle) + platSpeed * t1, y ), Quaternion.identity) as GameObject;
 				}
-				if (next == 2) {
+				if (nextSize == 2) {
 					clone = Instantiate (obj [next], new Vector2 (clone.rigidbody2D.position.x+Random.Range(halfLengthOfMini, 2*halfLengthOfMini) + platSpeed * t1, y ), Quaternion.identity) as GameObject;
 				}
 
 				prev=next;
-				extremum=4f;
+				extremum=setExtr(prev);
 				break;
 			default:
 				break;
