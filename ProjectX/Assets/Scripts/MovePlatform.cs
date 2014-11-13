@@ -4,17 +4,25 @@ using System.Collections;
 public class MovePlatform : MonoBehaviour {
 
 	//переменная для установки макс. скорости платфоормы
-	public float maxSpeed = -5f;
+	static public float maxSpeed = -5f;
 	public float endPosition = -20f;
+	public float timer = 1.0f;
+	float timeLeft;
 	//public GameObject targetObject;
 
 
 	// Use this for initialization
 	void Start () {
-	
+		//maxSpeed = -5f;
+		timeLeft = timer;
 	}
 	private void FixedUpdate()
 	{
+	//	timeLeft -= Time.deltaTime;
+	//	if(timeLeft < 0)
+	//	{
+			
+	//	}
 		rigidbody2D.velocity = new Vector2(maxSpeed,0);
 	}
 	// Update is called once per frame
@@ -27,5 +35,16 @@ public class MovePlatform : MonoBehaviour {
 		    		
 			rigidbody2D.position = new Vector2(10.5f, posY);
 		}*/
+
+		timeLeft -= Time.deltaTime;
+		if (timeLeft < 0 && !CameraScript.dead) {
+					maxSpeed *= 1.009f;
+					//print (maxSpeed);
+					timeLeft = timer;
+			}
+		if (CameraScript.dead) {
+						maxSpeed = -5f;
+				}
+
 	}
 }
