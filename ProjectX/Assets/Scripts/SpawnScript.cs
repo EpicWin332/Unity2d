@@ -70,18 +70,11 @@ float setExtr(int value)
 void LetClone (ref GameObject clone, ref float y)
 {
 		System.Random rnd = new System.Random ();
-		t1 = SquareEquationSmall (y0, y, obj [prev].GetComponent<Gravity> ().getGravity ());
+
 		//print(t1);
-		if (float.IsNaN(t1))
-		{
-			t1=0.1f;
-			if ((y0+extremum)>4f)
-				y=y0-Random.Range(extremum/2,extremum)-standOfNull;
-			else 
-				y=y0+Random.Range(extremum/2,extremum)-standOfNull; 
-		}
-		if ((y>3f) && (letSlide!=3))
-		{
+
+		//if ((y>3f) && (letSlide!=3))
+		/*{
 			letSlide++;
 			if (letSlide==3)
 			{
@@ -92,8 +85,17 @@ void LetClone (ref GameObject clone, ref float y)
 			else
 				letSlide++;
 		}
-
-		if (clone.rigidbody2D.position.x < 4f) {			//ГЕНЕРИРУЕМ ДО ТОГО КАК ОН БУДЕТ В УКАЗАННОЙ ТОЧКЕ 
+		*/
+		if (clone.rigidbody2D.position.x < 4f) {
+			t1 = SquareEquationSmall (y0, y, obj [prev].GetComponent<Gravity> ().getGravity ());
+			if (float.IsNaN(t1))
+			{
+				t1=0.2f;
+				if ((y0+extremum)>4f)
+					y=y0-Random.Range(extremum/2,extremum)-standOfNull;
+				else 
+					y=y0+Random.Range(extremum/2,extremum)-standOfNull; 
+			}//ГЕНЕРИРУЕМ ДО ТОГО КАК ОН БУДЕТ В УКАЗАННОЙ ТОЧКЕ 
 			prevSize=setSize(prev);
 
 			switch (prevSize) {
