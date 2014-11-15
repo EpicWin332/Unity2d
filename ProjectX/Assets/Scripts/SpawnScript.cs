@@ -4,7 +4,7 @@ using System.Collections;
 public class SpawnScript : MonoBehaviour
 {
 public GameObject[] obj;
-public GameObject startPlatform, clone1,clone2,player;
+public GameObject startPlatform, clone1,clone2;
 public float y0, firstY = 1f, x0 = 0, x; //squareEquation
 public float standOfNull=0.3f, halfLengthOfGreat=2f,halfLengthOfMiddle=0.8f,halfLengthOfMini=0.4f;
 public float gravity =30f, tao=0.02f, t1,t2,force, extremum,platSpeed=-1*MovePlatform.maxSpeed;
@@ -29,7 +29,8 @@ float SquareEquationSmall (float y0, float y, int force)
 }
 
 void Start ()
-{
+{	
+	
 	platSpeed = -1 * MovePlatform.maxSpeed;
 	t1=0;
 	//задаем гравитацию
@@ -86,11 +87,11 @@ void LetClone (ref GameObject clone, ref float y)
 				letSlide++;
 		}
 		*/
-		if (clone.rigidbody2D.position.x < 4f) {
+		if (clone.rigidbody2D.position.x < 6f) {
 			t1 = SquareEquationSmall (y0, y, obj [prev].GetComponent<Gravity> ().getGravity ());
 			if (float.IsNaN(t1))
 			{
-				t1=0.2f;
+				t1=0.4f;
 				if ((y0+extremum)>4f)
 					y=y0-Random.Range(extremum/2,extremum)-standOfNull;
 				else 

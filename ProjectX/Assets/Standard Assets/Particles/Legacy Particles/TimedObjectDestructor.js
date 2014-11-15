@@ -1,4 +1,4 @@
-var timeOut = 1.0;
+var timeOut = 1f;
 var detachChildren = false;
 
 function Awake ()

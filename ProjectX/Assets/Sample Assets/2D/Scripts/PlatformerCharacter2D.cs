@@ -19,7 +19,7 @@ public class PlatformerCharacter2D : MonoBehaviour
 	GameObject middlePosition;
 	GameObject miniPosition;
 	Transform groundCheck;								// A position marking where to check if the player is grounded.
-	float groundedRadius = 1f;							// Radius of the overlap circle to determine if grounded
+	float groundedRadius = 0.8f;							// Radius of the overlap circle to determine if grounded
 	bool grounded = false;								// Whether or not the player is grounded.
 	Transform ceilingCheck;								// A position marking where to check for ceilings
 	float ceilingRadius = .01f;							// Radius of the overlap circle to determine if the player can stand up
@@ -123,7 +123,7 @@ public class PlatformerCharacter2D : MonoBehaviour
 						//if (!grounded)
 								//doubleJump = true;
 				}
-				if (!grounded && swipe) {
+				if (!grounded && jump) {
 			           // rigidbody2D.velocity = new Vector2 (rigidbody2D.velocity.x, 0);
 			            rigidbody2D.AddForce(new Vector2(0f, -600f));
 		                                }

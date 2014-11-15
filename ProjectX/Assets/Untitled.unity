@@ -261,7 +261,6 @@ MonoBehaviour:
   startPlatform: {fileID: 789733683}
   clone1: {fileID: 0}
   clone2: {fileID: 0}
-  player: {fileID: 1749908160}
   y0: 0
   firstY: 1
   x0: 0
@@ -577,7 +576,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: .988235295, g: .674509823, b: .979580879, a: .0196078438}
+  m_BackGroundColor: {r: .289251745, g: .375029862, b: .786764741, a: .0196078438}
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
