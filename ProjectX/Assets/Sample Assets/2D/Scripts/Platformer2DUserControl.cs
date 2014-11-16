@@ -7,8 +7,7 @@ public class Platformer2DUserControl : MonoBehaviour
     private bool jump, swipe;
 	public Texture2D pauseImage;
 	public GameObject smoke;
-	public GameObject pos;
-	GameObject clone;
+	public float timeOut = 0.2f;
 
 	float MinSwipeDistance = 15f;
 	float SwipeAllowedVariance = 0.8f;
@@ -19,6 +18,7 @@ public class Platformer2DUserControl : MonoBehaviour
 	void Awake()
 	{
 		character = GetComponent<PlatformerCharacter2D>();
+		smoke.particleEmitter.emit=false;
 	}
 
     void Update ()
@@ -30,13 +30,33 @@ public class Platformer2DUserControl : MonoBehaviour
 		if (!CameraScript.visible && Input.GetButtonDown("Fire1")&&!((Input.mousePosition.x>Camera.main.pixelWidth-pauseImage.width-2)&&
 		                                    (Input.mousePosition.y>Camera.main.pixelHeight-pauseImage.height))){
 			jump = true;
-			clone=Instantiate (smoke, pos.transform.position, Quaternion.identity) as GameObject;
+			//clone=Instantiate (smoke, pos.transform.position, Quaternion.identity) as GameObject;
+		//	smoke.particleEmitter.emit=true;
+			//Invoke ("DestroyNow", timeOut);
 			//print(Input.mousePosition.x);
 			//print(Input.mousePosition.y);
 		}
 #endif
-		if(clone)
-		clone.transform.position = pos.transform.position;
+		print (PlatformerCharacter2D.flag);
+		if (PlatformerCharacter2D.flag == 1) {
+						if (rigidbody2D.velocity.y > 0.5f)
+								smoke.particleEmitter.emit = true;
+						else{
+								smoke.particleEmitter.emit = false;
+				                PlatformerCharacter2D.flag=0;
+			                }
+				}
+		if (PlatformerCharacter2D.flag == 2) {
+			if (rigidbody2D.velocity.y < -0.5f)
+				smoke.particleEmitter.emit = true;
+			else{
+				smoke.particleEmitter.emit = false;
+
+				PlatformerCharacter2D.flag=0;
+			    }
+		}
+		//if(clone)
+		//clone.transform.position = pos.transform.position;
 	   
 						if (Input.GetMouseButtonDown (0)) {
 								//save began touch 2d point
@@ -79,5 +99,12 @@ public class Platformer2DUserControl : MonoBehaviour
         // Reset the jump input once it has been used.
 	    jump = false;
 		swipe = false;
+	}
+
+	void DestroyNow ()
+	{
+		//DestroyObject (gameObject);
+		smoke.particleEmitter.emit=false;
+		//print(gameObject.particleEmitter.enabled);
 	}
 }

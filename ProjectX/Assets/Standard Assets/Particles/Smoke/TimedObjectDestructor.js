@@ -11,5 +11,7 @@ function DestroyNow ()
 	if (detachChildren) {
 		transform.DetachChildren ();
 	}
-	DestroyObject (gameObject);
+	//DestroyObject (gameObject);
+	gameObject.particleEmitter.enabled=false;
+	print(gameObject.particleEmitter.enabled);
 }

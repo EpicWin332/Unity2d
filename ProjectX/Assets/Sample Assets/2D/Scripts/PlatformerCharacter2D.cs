@@ -25,7 +25,7 @@ public class PlatformerCharacter2D : MonoBehaviour
 	float ceilingRadius = .01f;							// Radius of the overlap circle to determine if the player can stand up
 	Animator anim;										// Reference to the player's animator component.
 	bool doubleJump=false;
-
+	static public int flag=0;
 
 
     void Awake()
@@ -34,6 +34,7 @@ public class PlatformerCharacter2D : MonoBehaviour
 		groundCheck = transform.Find("GroundCheck");
 		ceilingCheck = transform.Find("CeilingCheck");
 		anim = GetComponent<Animator>();
+		flag = 0;
 		//rigidbody.constraints = RigidbodyConstraints.FreezePositionX;
 	}
 
@@ -125,12 +126,14 @@ public class PlatformerCharacter2D : MonoBehaviour
 						// Add a vertical force to the player.
 						anim.SetBool ("Ground", false);
 						rigidbody2D.AddForce(new Vector2(0f, jumpForce));
+			            flag=1;
 						//if (!grounded)
 								//doubleJump = true;
 				}
 				if (!grounded && jump) {
 			           // rigidbody2D.velocity = new Vector2 (rigidbody2D.velocity.x, 0);
 			            rigidbody2D.AddForce(new Vector2(0f, -600f));
+			            flag=2;
 		                                }
 
 	}
