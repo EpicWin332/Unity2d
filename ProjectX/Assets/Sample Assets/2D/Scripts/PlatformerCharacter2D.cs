@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -57,12 +57,10 @@ public class PlatformerCharacter2D : MonoBehaviour
 		transform.position = position;*/
 	}
 
-	private bool isIntersection(Vector2 a, Vector2 b, int radius){
-		if (Mathf.Sqrt (Mathf.Pow((a.x - b.x),2) + Mathf.Pow((a.y - b.y),2)) <= radius) {
-			return true;
-				} else {
-			return false;
-				}
+	private bool isIntersection(Vector2 a, float leftX, float rightX, float topY, float lowerY){
+		if ((a.x > rightX) || (a.x < leftX) || (a.y > topY) || (a.y < lowerY))
+						return false;
+		return true;
 		}
 
 	private void collideWithPlatforms(){
@@ -70,9 +68,16 @@ public class PlatformerCharacter2D : MonoBehaviour
 		arrayList.AddRange (GameObject.FindGameObjectsWithTag ("greatPlatform"));
 		arrayList.AddRange (GameObject.FindGameObjectsWithTag ("middlePlatform"));
 		arrayList.AddRange (GameObject.FindGameObjectsWithTag ("miniPlatform"));
+		float leftX, rightX, topY, lowerY, lengthRect, widthRect;
 		foreach(GameObject gameObject in arrayList)
 		{
-			if ((gameObject.rigidbody2D!=null)&&(isIntersection(groundCheck.position, gameObject.transform.position, 1))) {
+			lengthRect=gameObject.GetComponent<SpriteRenderer>().bounds.max.x-gameObject.GetComponent<SpriteRenderer>().bounds.min.x;
+			widthRect=gameObject.GetComponent<SpriteRenderer>().bounds.max.y-gameObject.GetComponent<SpriteRenderer>().bounds.min.y;
+			leftX=gameObject.transform.position.x-lengthRect/2f;
+			rightX=gameObject.transform.position.x+lengthRect/2f;
+			topY=gameObject.transform.position.y+widthRect/2f;
+			lowerY=gameObject.transform.position.y-widthRect/2f;
+			if ((gameObject.rigidbody2D!=null)&&(isIntersection(groundCheck.position, leftX, rightX, topY+1, lowerY))) {
 				SetGravity.setGravity(gameObject.GetComponent<Gravity> ().getGravity ());
 			}
 		}
