@@ -99,6 +99,7 @@ public class CameraScript : MonoBehaviour
 				myStyle2.normal.textColor = Color.white;
 				GUI.Label (new Rect (10, 10, 0, 0), "" + (int)playerScore, myStyle2); 
 				if (dead) {
+			SetGravity.setGravity(600);
 						GUI.Box (new Rect (originalWidth / 2 - playTexture.width / 2 - 130 - 60, originalHeight / 2 - playTexture.height / 2 - 60
 			                   , originalWidth - (originalWidth / 2 - playTexture.width / 2 - 130) * 2 + 120, playTexture.height + 120), ""
 								+ (int)playerScore, myStyle);
