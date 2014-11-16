@@ -6,6 +6,9 @@ public class Platformer2DUserControl : MonoBehaviour
 	private PlatformerCharacter2D character;
     private bool jump, swipe;
 	public Texture2D pauseImage;
+	public GameObject smoke;
+	public GameObject pos;
+	GameObject clone;
 
 	float MinSwipeDistance = 15f;
 	float SwipeAllowedVariance = 0.8f;
@@ -27,10 +30,13 @@ public class Platformer2DUserControl : MonoBehaviour
 		if (!CameraScript.visible && Input.GetButtonDown("Fire1")&&!((Input.mousePosition.x>Camera.main.pixelWidth-pauseImage.width-2)&&
 		                                    (Input.mousePosition.y>Camera.main.pixelHeight-pauseImage.height))){
 			jump = true;
+			clone=Instantiate (smoke, pos.transform.position, Quaternion.identity) as GameObject;
 			//print(Input.mousePosition.x);
 			//print(Input.mousePosition.y);
 		}
 #endif
+		if(clone)
+		clone.transform.position = pos.transform.position;
 	   
 						if (Input.GetMouseButtonDown (0)) {
 								//save began touch 2d point
