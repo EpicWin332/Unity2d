@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 8.54734421, y: -5.36828518, z: 0}
-  m_LocalScale: {x: .459941953, y: .459941953, z: 1}
+  m_LocalScale: {x: .5, y: .400000006, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -56,7 +56,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 6200000, guid: 3626fe8e008014f6bbd19bb72937b311, type: 2}
   m_IsTrigger: 0
-  m_Size: {x: 6, y: 4}
+  m_Size: {x: 8.5, y: 4}
   m_Center: {x: 0, y: 0}
 --- !u!114 &11400000
 MonoBehaviour:

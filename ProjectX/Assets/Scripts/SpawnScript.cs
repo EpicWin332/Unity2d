@@ -6,7 +6,7 @@ public class SpawnScript : MonoBehaviour
 public GameObject[] obj;
 public GameObject startPlatform, clone1,clone2;
 public float y0, firstY = 1f, x0 = 0, x; //squareEquation
-public float standOfNull=0.3f, halfLengthOfGreat=1.4f,halfLengthOfMiddle=1f,halfLengthOfMini=0.4f;
+public float standOfNull, halfLengthOfGreat=1.8f,halfLengthOfMiddle=0.8f,halfLengthOfMini=0.3f;
 public float gravity =30f, tao=0.02f, t1,t2,force, extremum,platSpeed=-1*MovePlatform.maxSpeed;
 public int switchcase = 1, next, prev,prevSize,nextSize, letSlide=0;
 int[] values = new int[15] {0,0,1,1,2,3,3,4,4,5,6,6,7,7,8};//0-great 1-mini 2-mini
@@ -40,13 +40,23 @@ void Start ()
 			t1 = SquareEquationSmall (y0, firstY,600);
 			next = rnd.Next (0, values.Length);
 			next = values [next];
-			clone1 = Instantiate (obj [next], new Vector2 (3.478378f * 2f + platSpeed * t1, firstY - standOfNull), Quaternion.identity) as GameObject;
-
+			clone1 = Instantiate (obj [next], new Vector2 (3.478378f * 2f + platSpeed * t1, firstY - setStandofNull(next)), Quaternion.identity) as GameObject;
+			  
 			prev = next;
-			y0 = firstY - standOfNull;//character.rigidbody2D.position.y-0.3f;//берет координаты в середине человека поэтому -0.3
-			firstY = 1f-standOfNull;
+			y0 = firstY - setStandofNull(next);//character.rigidbody2D.position.y-0.3f;//берет координаты в середине человека поэтому -0.3
+			firstY = 1f-setStandofNull(next);
 	}
 
+}
+float setStandofNull(int value)
+{
+		if ((value==0)||(value==3)||(value==6))
+			return 1f;
+		if ((value==1)||(value==4)||(value==7))
+			return 0.8f;
+		if ((value==2)||(value==5)||(value==8))
+			return 0.4f;
+		return 0;
 }
 int setSize(int value)
 {
@@ -87,16 +97,16 @@ void LetClone (ref GameObject clone, ref float y)
 				letSlide++;
 		}
 		*/
-		if (clone.rigidbody2D.position.x < 6f) {
+		if (clone.rigidbody2D.position.x < 4f) {
 			t1 = SquareEquationSmall (y0, y, obj [prev].GetComponent<Gravity> ().getGravity ());
-			if (float.IsNaN(t1))
+			/*if (float.IsNaN(t1))
 			{
 				t1=0.5f;
 				if ((y0+extremum)>4f)
 					y=y0-Random.Range(extremum/2,extremum)-standOfNull;
 				else 
 					y=y0+Random.Range(extremum/2,extremum)-standOfNull; 
-			}//ГЕНЕРИРУЕМ ДО ТОГО КАК ОН БУДЕТ В УКАЗАННОЙ ТОЧКЕ 
+			}//ГЕНЕРИРУЕМ ДО ТОГО КАК ОН БУДЕТ В УКАЗАННОЙ ТОЧКЕ */
 			prevSize=setSize(prev);
 
 			switch (prevSize) {
@@ -158,9 +168,9 @@ void LetClone (ref GameObject clone, ref float y)
 				break;
 			}
 			y0 = y;
-			y=Random.Range(-3f,y0+extremum)-standOfNull;
+			y=Random.Range(-3f,y0+extremum)-setStandofNull(next);
 			if (extremum==4f)
-				y = Random.Range (-3f,4f)-standOfNull;// В УРАВНЕНИИ НЕТ ОШИБОК! (-1f,y0+extr) y0 может стать тупо меньше первого аргумента
+				y = Random.Range (-3f,4f)-setStandofNull(next);// В УРАВНЕНИИ НЕТ ОШИБОК! (-1f,y0+extr) y0 может стать тупо меньше первого аргумента
 		}
 		
 
