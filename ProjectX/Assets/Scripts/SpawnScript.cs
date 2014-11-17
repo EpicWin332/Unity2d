@@ -6,7 +6,7 @@ public class SpawnScript : MonoBehaviour
 public GameObject[] obj;
 public GameObject startPlatform, clone1,clone2;
 public float y0, firstY = 1f, x0 = 0, x; //squareEquation
-public float standOfNull=0.3f, halfLengthOfGreat=2f,halfLengthOfMiddle=0.8f,halfLengthOfMini=0.4f;
+public float standOfNull=0.3f, halfLengthOfGreat=1.4f,halfLengthOfMiddle=1f,halfLengthOfMini=0.4f;
 public float gravity =30f, tao=0.02f, t1,t2,force, extremum,platSpeed=-1*MovePlatform.maxSpeed;
 public int switchcase = 1, next, prev,prevSize,nextSize, letSlide=0;
 int[] values = new int[15] {0,0,1,1,2,3,3,4,4,5,6,6,7,7,8};//0-great 1-mini 2-mini
