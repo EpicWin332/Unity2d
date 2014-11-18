@@ -37,7 +37,7 @@ public class Platformer2DUserControl : MonoBehaviour
 			//print(Input.mousePosition.y);
 		}
 #endif
-		print (PlatformerCharacter2D.flag);
+		//print (PlatformerCharacter2D.flag);
 		if (PlatformerCharacter2D.flag == 1) {
 						if (rigidbody2D.velocity.y > 0.5f)
 								smoke.particleEmitter.emit = true;

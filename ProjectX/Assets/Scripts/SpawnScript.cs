@@ -99,7 +99,7 @@ void LetClone (ref GameObject clone, ref float y)
 		*/
 		if (clone.rigidbody2D.position.x < 4f) {
 			t1 = SquareEquationSmall (y0, y, obj [prev].GetComponent<Gravity> ().getGravity ());
-			/*if (float.IsNaN(t1))
+			if (float.IsNaN(t1))
 			{
 				t1=0.5f;
 				if ((y0+extremum)>4f)
@@ -168,9 +168,9 @@ void LetClone (ref GameObject clone, ref float y)
 				break;
 			}
 			y0 = y;
-			y=Random.Range(-3f,y0+extremum)-setStandofNull(next);
-			if (extremum==4f)
-				y = Random.Range (-3f,4f)-setStandofNull(next);// В УРАВНЕНИИ НЕТ ОШИБОК! (-1f,y0+extr) y0 может стать тупо меньше первого аргумента
+			y=Random.Range(-2f,y0+extremum)-setStandofNull(next);
+			//if (extremum==4f)
+				//y = Random.Range (-3f,4f)-setStandofNull(next);// В УРАВНЕНИИ НЕТ ОШИБОК! (-1f,y0+extr) y0 может стать тупо меньше первого аргумента
 		}
 		
 
