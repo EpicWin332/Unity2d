@@ -1,0 +1,168 @@
+fileFormatVersion: 2
+guid: 9a5851d231ec54856af2911e4f2e3a09
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: astro_0
+    21300002: astro_1
+    21300004: astro_2
+    21300006: astro_3
+    21300008: astro_4
+    21300010: astro_5
+    21300012: astro_6
+    21300014: astro_7
+    21300016: astro_8
+    21300018: astro_9
+    21300020: astro_10
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: 2
+    aniso: 1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: astro_0
+      rect:
+        serializedVersion: 2
+        x: 161
+        y: 317
+        width: 217
+        height: 304
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: astro_1
+      rect:
+        serializedVersion: 2
+        x: 435
+        y: 317
+        width: 186
+        height: 321
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: astro_2
+      rect:
+        serializedVersion: 2
+        x: 662
+        y: 320
+        width: 217
+        height: 332
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: astro_3
+      rect:
+        serializedVersion: 2
+        x: 930
+        y: 374
+        width: 260
+        height: 274
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: astro_4
+      rect:
+        serializedVersion: 2
+        x: 1214
+        y: 377
+        width: 271
+        height: 268
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: astro_5
+      rect:
+        serializedVersion: 2
+        x: 1570
+        y: 333
+        width: 183
+        height: 288
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: astro_6
+      rect:
+        serializedVersion: 2
+        x: 1831
+        y: 317
+        width: 196
+        height: 301
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: astro_7
+      rect:
+        serializedVersion: 2
+        x: 2118
+        y: 320
+        width: 241
+        height: 325
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: astro_8
+      rect:
+        serializedVersion: 2
+        x: 2508
+        y: 350
+        width: 274
+        height: 305
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: astro_9
+      rect:
+        serializedVersion: 2
+        x: 2874
+        y: 337
+        width: 247
+        height: 308
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: astro_10
+      rect:
+        serializedVersion: 2
+        x: 3124
+        y: 310
+        width: 217
+        height: 304
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
