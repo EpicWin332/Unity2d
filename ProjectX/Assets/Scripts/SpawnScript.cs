@@ -4,6 +4,7 @@ using System.Collections;
 public class SpawnScript : MonoBehaviour
 {
 public GameObject[] obj;
+public GameObject[] tinies;
 public GameObject startPlatform, clone1,clone2;
 public float y0, firstY = 1f, x0 = 0, x; //squareEquation
 public float standOfNull, halfLengthOfGreat=2.2f,halfLengthOfMiddle=0.8f,halfLengthOfMini=0.3f;
@@ -41,7 +42,6 @@ void Start ()
 			next = rnd.Next (0, values.Length);
 			next = values [next];
 			clone1 = Instantiate (obj [next], new Vector2 (3.478378f * 2f + platSpeed * t1, firstY - setStandofNull(next)), Quaternion.identity) as GameObject;
-			  
 			prev = next;
 			y0 = firstY - setStandofNull(next);//character.rigidbody2D.position.y-0.3f;//берет координаты в середине человека поэтому -0.3
 			firstY = 1f-setStandofNull(next);
@@ -115,7 +115,10 @@ void LetClone (ref GameObject clone, ref float y)
 				next = values [next];
 				nextSize=setSize(next);
 				if (nextSize == 0) {
+
 					clone = Instantiate (obj [next], new Vector2 (clone.rigidbody2D.position.x+ Random.Range(halfLengthOfGreat,2*halfLengthOfGreat) + platSpeed * t1, y), Quaternion.identity) as GameObject; //5-скорость платформы
+					//clone2 = Instantiate (tinies[2], new Vector2 (clone.rigidbody2D.position.x+ Random.Range(halfLengthOfGreat,2*halfLengthOfGreat) + platSpeed * t1+0.5f, y-0.5f), Quaternion.identity) as GameObject;
+					
 				}
 				if (nextSize == 1) {
 					clone = Instantiate (obj [next], new Vector2 (clone.rigidbody2D.position.x + Random.Range (halfLengthOfGreat, halfLengthOfGreat+halfLengthOfMiddle) + platSpeed * t1, y), Quaternion.identity) as GameObject;
