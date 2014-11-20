@@ -2905,7 +2905,7 @@ MonoBehaviour:
   x0: 0
   x: 0
   standOfNull: 0
-  halfLengthOfGreat: 2
+  halfLengthOfGreat: 2.20000005
   halfLengthOfMiddle: .800000012
   halfLengthOfMini: .300000012
   gravity: 30
@@ -2914,7 +2914,7 @@ MonoBehaviour:
   t2: 0
   force: 0
   extremum: 0
-  platSpeed: 5
+  platSpeed: 6.03509378
   switchcase: 1
   next: 0
   prev: 0
