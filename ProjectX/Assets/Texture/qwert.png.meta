@@ -1,0 +1,212 @@
+fileFormatVersion: 2
+guid: 99dc2f47fc4ca42f9ba222b1ef66379a
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: qwert_0
+    21300002: qwert_1
+    21300004: qwert_2
+    21300006: qwert_3
+    21300008: qwert_4
+    21300010: qwert_5
+    21300012: qwert_6
+    21300014: qwert_7
+    21300016: qwert_8
+    21300018: qwert_9
+    21300020: qwert_10
+    21300022: qwert_11
+    21300024: qwert_12
+    21300026: qwert_13
+    21300028: qwert_14
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -2
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: qwert_0
+      rect:
+        serializedVersion: 2
+        x: 79.5999985
+        y: 91
+        width: 298
+        height: 360
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: qwert_1
+      rect:
+        serializedVersion: 2
+        x: 236.399994
+        y: 592
+        width: 298
+        height: 360
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: qwert_2
+      rect:
+        serializedVersion: 2
+        x: 522.700012
+        y: 592
+        width: 298
+        height: 360
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: qwert_3
+      rect:
+        serializedVersion: 2
+        x: 818.900024
+        y: 592
+        width: 298
+        height: 360
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: qwert_4
+      rect:
+        serializedVersion: 2
+        x: 1121
+        y: 592
+        width: 298
+        height: 360
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: qwert_5
+      rect:
+        serializedVersion: 2
+        x: 1423.30005
+        y: 592
+        width: 298
+        height: 360
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: qwert_6
+      rect:
+        serializedVersion: 2
+        x: 1725
+        y: 592
+        width: 298
+        height: 360
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: qwert_7
+      rect:
+        serializedVersion: 2
+        x: 2021
+        y: 592
+        width: 298
+        height: 360
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: qwert_8
+      rect:
+        serializedVersion: 2
+        x: 2179
+        y: 92
+        width: 298
+        height: 360
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: qwert_9
+      rect:
+        serializedVersion: 2
+        x: 379
+        y: 91
+        width: 298
+        height: 360
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: qwert_10
+      rect:
+        serializedVersion: 2
+        x: 670.5
+        y: 91
+        width: 298
+        height: 360
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: qwert_11
+      rect:
+        serializedVersion: 2
+        x: 1273
+        y: 91
+        width: 298
+        height: 360
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: qwert_12
+      rect:
+        serializedVersion: 2
+        x: 971
+        y: 91
+        width: 298
+        height: 360
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: qwert_13
+      rect:
+        serializedVersion: 2
+        x: 1575
+        y: 91
+        width: 298
+        height: 360
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: qwert_14
+      rect:
+        serializedVersion: 2
+        x: 1877.30005
+        y: 92
+        width: 298
+        height: 360
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
