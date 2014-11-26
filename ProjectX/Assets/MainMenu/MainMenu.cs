@@ -19,7 +19,7 @@ public class MainMenu : MonoBehaviour {
 		// draw your GUI controls here:
 
 		if (GUI.Button(new Rect (originalWidth / 3 - buttonTexture.width/2, originalHeight / 2 - buttonTexture.height/2 
-		           ,buttonTexture.width, buttonTexture.height), buttonTexture, Style)) 
+		           ,buttonTexture.width, buttonTexture.height), Style)) 
 		   
 		{
 			Application.LoadLevel(1);
