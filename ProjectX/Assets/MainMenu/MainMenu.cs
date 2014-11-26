@@ -4,7 +4,7 @@ using System.Collections;
 public class MainMenu : MonoBehaviour {
 	public Texture backGround;
 	public Texture2D buttonTexture;
-	public GUIStyle Style;
+	//public GUIStyle Style;
 	float originalWidth = 720f;  // define here the original resolution
 	float originalHeight = 1280f; // you used to create the GUI contents 
 	private Vector3 scale;
@@ -19,7 +19,7 @@ public class MainMenu : MonoBehaviour {
 		// draw your GUI controls here:
 
 		if (GUI.Button(new Rect (originalWidth / 3 - buttonTexture.width/2, originalHeight / 2 - buttonTexture.height/2 
-		           ,buttonTexture.width, buttonTexture.height), Style)) 
+		           ,buttonTexture.width, buttonTexture.height), buttonTexture, GUIStyle.none)) 
 		   
 		{
 			Application.LoadLevel(1);
