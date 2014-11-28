@@ -18,7 +18,7 @@ public class MainMenu : MonoBehaviour {
 		GUI.matrix = Matrix4x4.TRS(Vector3.zero, Quaternion.identity, scale);
 		// draw your GUI controls here:
 
-		if (GUI.Button(new Rect (originalWidth / 3 - buttonTexture.width/2, originalHeight / 2 - buttonTexture.height/2 
+		if (GUI.Button(new Rect (originalWidth / 2 - buttonTexture.width/2, originalHeight / 2 - buttonTexture.height/2 
 		           ,buttonTexture.width, buttonTexture.height), buttonTexture, GUIStyle.none)) 
 		   
 		{
