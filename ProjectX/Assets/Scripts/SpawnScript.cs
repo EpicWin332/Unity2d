@@ -51,7 +51,7 @@ void Start ()
 float setStandofNull(int value)
 {
 		if ((value==0)||(value==3)||(value==6))
-			return 0.5f;
+			return 1f;
 		if ((value==1)||(value==4)||(value==7))
 			return 0.6f;
 		if ((value==2)||(value==5)||(value==8))
@@ -172,6 +172,8 @@ void LetClone (ref GameObject clone, ref float y)
 			}
 			y0 = y;
 			y=Random.Range(-2f,y0+extremum)-setStandofNull(next);
+			if (y>4f)
+				y=y-1f;
 			//if (extremum==4f)
 				//y = Random.Range (-3f,4f)-setStandofNull(next);// В УРАВНЕНИИ НЕТ ОШИБОК! (-1f,y0+extr) y0 может стать тупо меньше первого аргумента
 		}
