@@ -3902,10 +3902,6 @@ MonoBehaviour:
   - {fileID: 100000, guid: ac1cc49f8ff544f2a99e79701d351ee2, type: 2}
   - {fileID: 100000, guid: 4eb19418f013d43cd86cf5d3cba171c2, type: 2}
   - {fileID: 100000, guid: bf11387a31a0540a39e8e379cbdb85c1, type: 2}
-  tinies:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 100000, guid: 677bb13dd57de4a5c9108eea21ee5810, type: 2}
   startPlatform: {fileID: 1749908160}
   clone1: {fileID: 0}
   clone2: {fileID: 0}
@@ -7390,7 +7386,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetObject: {fileID: 1749908160}
   buttonTexture: {fileID: 2800000, guid: 30c190f78e6374f21bab191cc511ff99, type: 3}
-  playTexture: {fileID: 2800000, guid: 50e7dbacef10040179a6290e46de2015, type: 3}
+  playTexture: {fileID: 2800000, guid: dbaecb56252f4444293f8ffb08b7e2ff, type: 3}
   homeTexture: {fileID: 2800000, guid: 9e91b44df612643a79070e46796987cc, type: 3}
 --- !u!1001 &1400354348
 Prefab:
@@ -8358,7 +8354,7 @@ Prefab:
     - target: {fileID: 21200000, guid: 87a2357765801c34292d6718d8b4d770, type: 2}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 9a5851d231ec54856af2911e4f2e3a09,
+      objectReference: {fileID: 21300000, guid: 68c94be1c266944e6b2b25a7799bb189,
         type: 3}
     - target: {fileID: 5800000, guid: 87a2357765801c34292d6718d8b4d770, type: 2}
       propertyPath: m_Center.x
@@ -8798,7 +8794,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 2511236001
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 9a5851d231ec54856af2911e4f2e3a09, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 68c94be1c266944e6b2b25a7799bb189, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &1749908169
 MonoBehaviour:
