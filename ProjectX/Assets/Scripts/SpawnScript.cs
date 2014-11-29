@@ -4,7 +4,7 @@ using System.Collections;
 public class SpawnScript : MonoBehaviour
 {
 public GameObject[] obj;
-public GameObject startPlatform, clone1,clone2;
+public GameObject startPlatform, clone1;
 public float y0, firstY = 1f, x0 = 0, x; //squareEquation
 public float standOfNull, halfLengthOfGreat=2.2f,halfLengthOfMiddle=0.8f,halfLengthOfMini=0.3f;
 public float gravity =30f, tao=0.02f, t1,t2,force, extremum,platSpeed=-1*MovePlatform.maxSpeed;
