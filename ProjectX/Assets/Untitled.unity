@@ -3929,6 +3929,7 @@ MonoBehaviour:
   force: 0
   extremum: 0
   platSpeed: 5
+  oxyCloneLen: 0
   switchcase: 1
   next: 0
   prev: 0
@@ -7234,6 +7235,7 @@ MonoBehaviour:
   force: 0
   extremum: 0
   platSpeed: 5
+  oxyCloneLen: 0
   switchcase: 1
   next: 0
   prev: 0
