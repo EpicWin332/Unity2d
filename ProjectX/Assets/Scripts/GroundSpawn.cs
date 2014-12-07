@@ -1,21 +1,21 @@
 using UnityEngine;
 using System.Collections;
 //using MovePlatform.cs;
-public class SpawnScript : MonoBehaviour
+public class GroundSpawn : MonoBehaviour
 {
 public GameObject[] obj;
-public GameObject startPlatform, clone1;
+public GameObject startPlatform, clone1,oxygen,oxyclone;
 public float y0, firstY = 1f, x0 = 0, x; //squareEquation
 public float standOfNull, halfLengthOfGreat=2.2f,halfLengthOfMiddle=0.8f,halfLengthOfMini=0.3f;
-public float gravity =30f, tao=0.02f, t1,t2,force, extremum,platSpeed=-1*MovePlatform.maxSpeed;
+public float gravity =30f, tao=0.02f, t1,t2,force, extremum,platSpeed=-1*MovePlatform.maxSpeed,oxyCloneLen;
 public int switchcase = 1, next, prev,prevSize,nextSize, letSlide=0;
-int[] values = new int[15] {0,0,1,1,2,3,3,4,4,5,6,6,7,7,8};//0-great 1-mini 2-mini
+public int[] values = new int[15] {0,0,1,1,2,3,3,4,4,5,6,6,7,7,8};//0-great 1-mini 2-mini
 //int[] values = new int[5] {2,2,2,2,2};
-public bool counter = true;
+public int counter;
 //-gt^2/2+a*tao*t+(y0-a*tao^2/2-y)=0
 
 
-float SquareEquationSmall (float y0, float y, int force)
+protected float SquareEquationSmall (float y0, float y, int force)
 {
 	float t2;
 	t1 = (-force*tao + Mathf.Sqrt (Mathf.Pow(force*tao,2f) + 4f * 0.5f*gravity * (y0 - y - 0.5f*force*tao*tao))) / (-gravity);
@@ -28,24 +28,8 @@ float SquareEquationSmall (float y0, float y, int force)
 	}
 }
 
-void Start ()
-{	
-	
-	platSpeed = -1 * MovePlatform.maxSpeed;
-	t1=0;
-	System.Random rnd = new System.Random ();
-	if (startPlatform.transform.position.x < 3.5f) {
-			t1 = SquareEquationSmall (y0, firstY,600);
-			next = rnd.Next (0, values.Length);
-			next = values [next];
-			clone1 = Instantiate (obj [next], new Vector2 (3.478378f * 2f + platSpeed * t1, firstY - setStandofNull(next)), Quaternion.identity) as GameObject;
-			prev = next;
-			y0 = firstY - setStandofNull(next);//character.rigidbody2D.position.y-0.3f;//берет координаты в середине человека поэтому -0.3
-			firstY = 1f-setStandofNull(next);
-	}
 
-}
-float setStandofNull(int value)
+public float setStandofNull(int value)
 {
 		if ((value==0)||(value==3)||(value==6))
 			return 1f;
@@ -173,14 +157,54 @@ void LetClone (ref GameObject clone, ref float y)
 				y=y-1f;
 			//if (extremum==4f)
 				//y = Random.Range (-3f,4f)-setStandofNull(next);// В УРАВНЕНИИ НЕТ ОШИБОК! (-1f,y0+extr) y0 может стать тупо меньше первого аргумента
+			counter = rnd.Next(0, 5);
 		}
-		
+
+
 
 }
-void Update ()
+void oxygenClone(ref GameObject oxyclone, ref float y)
 {
+	if (counter == 1)
+	{
+		if ((next==0)|| (next==3) ||(next==6))
+				oxyCloneLen=halfLengthOfGreat;
+			else oxyCloneLen=0f;
+		oxyclone = Instantiate (oxygen, new Vector2 (clone1.rigidbody2D.position.x+Random.Range(-oxyCloneLen,oxyCloneLen),clone1.rigidbody2D.position.y+Random.Range(1f,2f)), Quaternion.identity) as GameObject;
+		
+		//берет монетку	oxyclone.GetComponent<SpriteRenderer>().enabled=false;
+		counter=0;
+	}
+}
+protected void Start ()
+{	
+	
+	platSpeed = -1 * MovePlatform.maxSpeed;
+	t1=0;
+	System.Random rnd = new System.Random ();
+	if (startPlatform.transform.position.x < 3.5f) {
+			t1 = SquareEquationSmall (y0, firstY,600);
+			next = rnd.Next (0, values.Length);
+			next = values [next];
+			clone1 = Instantiate (obj [next], new Vector2 (3.478378f * 2f + platSpeed * t1, firstY - setStandofNull(next)), Quaternion.identity) as GameObject;
+			//oxyclone = Instantiate (oxygen, new Vector2 (clone1.rigidbody2D.position.x,clone1.rigidbody2D.position.y+1f), Quaternion.identity) as GameObject;
+			
+			prev = next;
+			y0 = firstY - setStandofNull(next);//character.rigidbody2D.position.y-0.3f;//берет координаты в середине человека поэтому -0.3
+			firstY = 1f-setStandofNull(next);
+	}
+
+}
+
+protected void Update ()
+	{
+
 		platSpeed = -1 * MovePlatform.maxSpeed;
 		LetClone (ref clone1, ref firstY);
-}
+		oxygenClone (ref oxyclone, ref firstY);
+		
+		//oxyclone = Instantiate (oxygen, new Vector2 (clone1.rigidbody2D.position.x,clone1.rigidbody2D.position.y+1f), Quaternion.identity) as GameObject;
+		
+	}
 
 }
