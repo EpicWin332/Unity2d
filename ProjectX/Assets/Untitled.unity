@@ -3050,7 +3050,7 @@ Prefab:
     - target: {fileID: 11400000, guid: 4562ac9dbb6c743fa954427b1d8813ec, type: 2}
       propertyPath: player
       value: 
-      objectReference: {fileID: 1749908160}
+      objectReference: {fileID: 610342580}
     - target: {fileID: 11400000, guid: 4562ac9dbb6c743fa954427b1d8813ec, type: 2}
       propertyPath: obj.Array.data[3]
       value: 
@@ -3914,6 +3914,7 @@ MonoBehaviour:
   clone1: {fileID: 0}
   oxygen: {fileID: 100000, guid: c11cfa69e353a4f118117b23383e05df, type: 2}
   oxyclone: {fileID: 0}
+  player: {fileID: 610342580}
   y0: 0
   firstY: 1
   x0: 0
@@ -7220,6 +7221,7 @@ MonoBehaviour:
   clone1: {fileID: 0}
   oxygen: {fileID: 100000, guid: c11cfa69e353a4f118117b23383e05df, type: 2}
   oxyclone: {fileID: 0}
+  player: {fileID: 0}
   y0: 0
   firstY: 1
   x0: 0
@@ -8453,6 +8455,10 @@ Prefab:
     - target: {fileID: 6100000, guid: 87a2357765801c34292d6718d8b4d770, type: 2}
       propertyPath: m_Center.x
       value: .150000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 87a2357765801c34292d6718d8b4d770, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 87a2357765801c34292d6718d8b4d770, type: 2}
@@ -10423,7 +10429,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 9d508fd3b040f4eb6877ee7866de341d, type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 9d508fd3b040f4eb6877ee7866de341d, type: 2}
       propertyPath: oxygen

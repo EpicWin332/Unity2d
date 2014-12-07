@@ -4,7 +4,7 @@ using System.Collections;
 public class GroundSpawn : MonoBehaviour
 {
 public GameObject[] obj;
-public GameObject startPlatform, clone1,oxygen,oxyclone;
+public GameObject startPlatform, clone1,oxygen,oxyclone,player;
 public float y0, firstY = 1f, x0 = 0, x; //squareEquation
 public float standOfNull, halfLengthOfGreat=2.2f,halfLengthOfMiddle=0.8f,halfLengthOfMini=0.3f;
 public float gravity =30f, tao=0.02f, t1,t2,force, extremum,platSpeed=-1*MovePlatform.maxSpeed,oxyCloneLen;
@@ -172,9 +172,10 @@ void oxygenClone(ref GameObject oxyclone, ref float y)
 			else oxyCloneLen=0f;
 		oxyclone = Instantiate (oxygen, new Vector2 (clone1.rigidbody2D.position.x+Random.Range(-oxyCloneLen,oxyCloneLen),clone1.rigidbody2D.position.y+Random.Range(1f,2f)), Quaternion.identity) as GameObject;
 		
-		//берет монетку	oxyclone.GetComponent<SpriteRenderer>().enabled=false;
 		counter=0;
 	}
+	if ((player.transform.position.x==oxyclone.transform.position.x) && (player.transform.position.y==oxyclone.transform.position.y))
+				oxyclone.GetComponent<SpriteRenderer>().enabled=false;
 }
 protected void Start ()
 {	
