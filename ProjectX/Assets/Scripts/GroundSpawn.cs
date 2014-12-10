@@ -174,7 +174,8 @@ void oxygenClone(ref GameObject oxyclone, ref float y)
 		
 		counter=0;
 	}
-	if ((player.transform.position.x==oxyclone.transform.position.x) && (player.transform.position.y==oxyclone.transform.position.y))
+	if (oxyclone!=null)
+			if (Mathf.Pow(player.transform.position.x-oxyclone.transform.position.x,2f) + Mathf.Pow(player.transform.position.x-oxyclone.transform.position.x,2f)<=0.25f)
 				oxyclone.GetComponent<SpriteRenderer>().enabled=false;
 }
 protected void Start ()
