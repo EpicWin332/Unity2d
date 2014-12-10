@@ -38,7 +38,7 @@ public class MovePlatform : MonoBehaviour {
 
 		timeLeft -= Time.deltaTime;
 		if (timeLeft < 0 && !CameraScript.dead) {
-					maxSpeed *= 1.009f;
+					maxSpeed *= 1.006f;
 					//print (maxSpeed);
 					timeLeft = timer;
 			}

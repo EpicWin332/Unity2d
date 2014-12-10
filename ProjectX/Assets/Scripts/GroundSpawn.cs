@@ -198,7 +198,7 @@ protected void Start ()
 
 }
 
-protected void Update ()
+ void Update ()
 	{
 
 		platSpeed = -1 * MovePlatform.maxSpeed;
