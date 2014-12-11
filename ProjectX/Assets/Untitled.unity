@@ -3911,7 +3911,6 @@ MonoBehaviour:
   - {fileID: 100000, guid: 4eb19418f013d43cd86cf5d3cba171c2, type: 2}
   - {fileID: 100000, guid: bf11387a31a0540a39e8e379cbdb85c1, type: 2}
   startPlatform: {fileID: 1749908160}
-  clone1: {fileID: 0}
   oxygen: {fileID: 100000, guid: c11cfa69e353a4f118117b23383e05df, type: 2}
   oxyclone: {fileID: 0}
   player: {fileID: 1749908160}
@@ -3929,7 +3928,7 @@ MonoBehaviour:
   t2: 0
   force: 0
   extremum: 0
-  platSpeed: 5.06018019
+  platSpeed: 5
   oxyCloneLen: 0
   switchcase: 1
   next: 0
@@ -7218,7 +7217,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   obj: []
   startPlatform: {fileID: 0}
-  clone1: {fileID: 0}
   oxygen: {fileID: 100000, guid: c11cfa69e353a4f118117b23383e05df, type: 2}
   oxyclone: {fileID: 0}
   player: {fileID: 0}
@@ -7472,7 +7470,6 @@ MonoBehaviour:
   buttonTexture: {fileID: 2800000, guid: 30c190f78e6374f21bab191cc511ff99, type: 3}
   playTexture: {fileID: 2800000, guid: dbaecb56252f4444293f8ffb08b7e2ff, type: 3}
   homeTexture: {fileID: 2800000, guid: 9e91b44df612643a79070e46796987cc, type: 3}
-  barDisplay: 0
   progressBarEmpty: {fileID: 2800000, guid: c5bec14d4c3274b76bab52da1080c9e3, type: 3}
   progressBarFull: {fileID: 2800000, guid: 47967b8726f9d4de0b72b9c553ec0c1d, type: 3}
 --- !u!1001 &1400354348
