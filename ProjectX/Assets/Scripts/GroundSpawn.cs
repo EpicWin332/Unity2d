@@ -12,6 +12,7 @@ public int switchcase = 1, next, prev,prevSize,nextSize, letSlide=0;
 public int[] values = new int[15] {0,0,1,1,2,3,3,4,4,5,6,6,7,7,8};//0-great 1-mini 2-mini
 //int[] values = new int[5] {2,2,2,2,2};
 public int counter;
+	bool flag = true;
 //-gt^2/2+a*tao*t+(y0-a*tao^2/2-y)=0
 
 
@@ -174,9 +175,20 @@ void oxygenClone(ref GameObject oxyclone, ref float y)
 		
 		counter=0;
 	}
-	if (oxyclone!=null)
-			if (Mathf.Pow(player.transform.position.x-oxyclone.transform.position.x,2f) + Mathf.Pow(player.transform.position.y-oxyclone.transform.position.y,2f)<=0.25f)
-				oxyclone.GetComponent<SpriteRenderer>().enabled=false;
+	if (oxyclone != null) {
+						if (Mathf.Pow (player.transform.position.x - oxyclone.transform.position.x, 2f) + Mathf.Pow (player.transform.position.y - oxyclone.transform.position.y, 2f) <= 0.25f) {
+								oxyclone.GetComponent<SpriteRenderer> ().enabled = false;
+								if (flag) {
+					if(CameraScript.barDisplay < 100)
+										CameraScript.barDisplay = 0;
+					else
+						CameraScript.barDisplay -= 100;
+										flag = false;
+								}
+						}
+			if (!(Mathf.Pow (player.transform.position.x - oxyclone.transform.position.x, 2f) + Mathf.Pow (player.transform.position.y - oxyclone.transform.position.y, 2f) <= 0.25f)) 
+				flag=true;
+			}
 }
 protected void Start ()
 {	
@@ -195,7 +207,7 @@ protected void Start ()
 			y0 = firstY - setStandofNull(next);//character.rigidbody2D.position.y-0.3f;//берет координаты в середине человека поэтому -0.3
 			firstY = 1f-setStandofNull(next);
 	}
-
+		flag = true;
 }
 
  void Update ()

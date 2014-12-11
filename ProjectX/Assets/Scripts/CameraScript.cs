@@ -14,9 +14,9 @@ public class CameraScript : MonoBehaviour
 		float originalHeight = 1280f; // you used to create the GUI contents 
 		private Vector3 scale;
 		float playerScore = 0;
-	    public float barDisplay   = 0; 
+	    static public float barDisplay   = 0; 
 	     Vector2 pos = new Vector2(200, 8); 
-	     Vector2 size = new Vector2(400,101); 
+	    // Vector2 size = new Vector2(400,101); 
 	    public Texture2D progressBarEmpty; 
 	    public Texture2D progressBarFull;
 
@@ -24,7 +24,7 @@ public class CameraScript : MonoBehaviour
 		// Use this for initialization
 		void Start ()
 		{
-	
+		    barDisplay   = 0; 
 		}
 	
 		// Update is called once per frame
@@ -49,7 +49,9 @@ public class CameraScript : MonoBehaviour
 				}
 				playerScore += Time.deltaTime;
 		        //barDisplay = Time.time * 0.05f;
-		        barDisplay += Time.deltaTime*25;
+		        barDisplay += Time.deltaTime*10;
+		        if (barDisplay + 120 >= progressBarFull.width)
+						PlatformerCharacter2D.oxygen = false;
 		}
 
 		public void IncreaseScore (int amount)
@@ -115,12 +117,12 @@ public class CameraScript : MonoBehaviour
 				}
 
 		//draw the background:
-		GUI.BeginGroup(new Rect(pos.x, pos.y, size.x, size.y));
-		GUI.Box(new Rect(0,0, size.x, size.y), progressBarEmpty, GUIStyle.none);
+		GUI.BeginGroup(new Rect(pos.x, pos.y, progressBarEmpty.width, progressBarEmpty.height));
+		GUI.Box(new Rect(0,0, progressBarEmpty.width, progressBarEmpty.height), progressBarEmpty, GUIStyle.none);
 		
 		   //draw the filled-in part:
-		GUI.BeginGroup(new Rect(0,0, size.x-(barDisplay), size.y));
-		     GUI.Box(new Rect(0,0, size.x, size.y), progressBarFull, GUIStyle.none);
+		GUI.BeginGroup(new Rect(0,0, progressBarFull.width-(barDisplay+110), progressBarFull.height));
+		GUI.Box(new Rect(0,0, progressBarFull.width, progressBarFull.height), progressBarFull, GUIStyle.none);
 		   GUI.EndGroup();
 		GUI.EndGroup();
 			GUI.matrix = svMat; // restore matrix

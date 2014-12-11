@@ -26,6 +26,7 @@ public class PlatformerCharacter2D : MonoBehaviour
 	Animator anim;										// Reference to the player's animator component.
 	bool doubleJump=false;
 	static public int flag=0;
+	static public bool oxygen=true;
 
 
     void Awake()
@@ -35,6 +36,7 @@ public class PlatformerCharacter2D : MonoBehaviour
 		ceilingCheck = transform.Find("CeilingCheck");
 		anim = GetComponent<Animator>();
 		flag = 0;
+		oxygen = true;
 		//rigidbody.constraints = RigidbodyConstraints.FreezePositionX;
 	}
 
@@ -121,7 +123,7 @@ public class PlatformerCharacter2D : MonoBehaviour
 				}
 
 				// If the player should jump...
-				if (grounded && jump) {
+				if (grounded && jump && oxygen) {
 						//rigidbody2D.velocity = new Vector2 (rigidbody2D.velocity.x, 0);
 						// Add a vertical force to the player.
 						//anim.SetBool ("Ground", false);
@@ -130,7 +132,7 @@ public class PlatformerCharacter2D : MonoBehaviour
 						//if (!grounded)
 								//doubleJump = true;
 				}
-				if (!grounded && jump) {
+				if (!grounded && jump && oxygen) {
 			           // rigidbody2D.velocity = new Vector2 (rigidbody2D.velocity.x, 0);
 			            rigidbody2D.AddForce(new Vector2(0f, -600f));
 			            flag=2;
