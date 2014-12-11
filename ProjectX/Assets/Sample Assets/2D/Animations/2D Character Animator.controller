@@ -229,11 +229,7 @@ Transition:
   m_DstState: {fileID: 110205773}
   m_TransitionDuration: 0
   m_TransitionOffset: 0
-  m_Conditions:
-  - m_ConditionMode: 2
-    m_ConditionEvent: Ground
-    m_EventTreshold: 0
-    m_ExitTime: .899999976
+  m_Conditions: []
   m_Atomic: 0
   m_Solo: 0
   m_Mute: 0
@@ -287,24 +283,12 @@ StateMachine:
       second:
       - {fileID: 110183827}
     data:
-      first: {fileID: 0}
-      second: []
-    data:
       first: {fileID: 110262872}
-      second: []
-    data:
-      first: {fileID: 0}
       second: []
     data:
       first: {fileID: 110205773}
       second:
       - {fileID: 110100000}
-    data:
-      first: {fileID: 0}
-      second: []
-    data:
-      first: {fileID: 0}
-      second: []
   m_MotionSetCount: 1
   m_AnyStatePosition: {x: 552, y: -72, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
