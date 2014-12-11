@@ -16,7 +16,7 @@ public class CameraScript : MonoBehaviour
 		float playerScore = 0;
 	    public float barDisplay   = 0; 
 	     Vector2 pos = new Vector2(200,8); 
-	     Vector2 size = new Vector2(400,101); 
+	     Vector2 size = new Vector2(350,90); 
 	    public Texture2D progressBarEmpty; 
 	    public Texture2D progressBarFull;
 
