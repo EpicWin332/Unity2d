@@ -7473,8 +7473,8 @@ MonoBehaviour:
   playTexture: {fileID: 2800000, guid: dbaecb56252f4444293f8ffb08b7e2ff, type: 3}
   homeTexture: {fileID: 2800000, guid: 9e91b44df612643a79070e46796987cc, type: 3}
   barDisplay: 0
-  progressBarEmpty: {fileID: 2800000, guid: ec47edc4060c64ca4adf3c5dcda1fe15, type: 3}
-  progressBarFull: {fileID: 2800000, guid: 1e71253246d9e451cb334593a83ba274, type: 3}
+  progressBarEmpty: {fileID: 2800000, guid: c5bec14d4c3274b76bab52da1080c9e3, type: 3}
+  progressBarFull: {fileID: 2800000, guid: 47967b8726f9d4de0b72b9c553ec0c1d, type: 3}
 --- !u!1001 &1400354348
 Prefab:
   m_ObjectHideFlags: 0

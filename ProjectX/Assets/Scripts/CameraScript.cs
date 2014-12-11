@@ -15,8 +15,8 @@ public class CameraScript : MonoBehaviour
 		private Vector3 scale;
 		float playerScore = 0;
 	    public float barDisplay   = 0; 
-	     Vector2 pos = new Vector2(180,30); 
-	     Vector2 size = new Vector2(350,50); 
+	     Vector2 pos = new Vector2(200,8); 
+	     Vector2 size = new Vector2(400,101); 
 	    public Texture2D progressBarEmpty; 
 	    public Texture2D progressBarFull;
 
@@ -115,12 +115,12 @@ public class CameraScript : MonoBehaviour
 
 		//draw the background:
 		GUI.BeginGroup(new Rect(pos.x, pos.y, size.x, size.y));
-		GUI.Box(new Rect(0,0, size.x, size.y), progressBarEmpty);
+		  GUI.Box(new Rect(0,0, size.x, size.y), progressBarEmpty);
 		
-		//draw the filled-in part:
-		GUI.BeginGroup(new Rect(0,0, size.x * barDisplay, size.y));
-		GUI.Box(new Rect(0,0, size.x, size.y), progressBarFull);
-		GUI.EndGroup();
+		   //draw the filled-in part:
+		   GUI.BeginGroup(new Rect(0,0, size.x * barDisplay, size.y));
+		    GUI.Box(new Rect(0,0, size.x, size.y), progressBarFull);
+		   GUI.EndGroup();
 		GUI.EndGroup();
 				GUI.matrix = svMat; // restore matrix
 		}	
