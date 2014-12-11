@@ -3,8 +3,9 @@ using System.Collections;
 //using MovePlatform.cs;
 public class GroundSpawn : MonoBehaviour
 {
+static public GameObject clone1;
 public GameObject[] obj;
-public GameObject startPlatform, clone1,oxygen,oxyclone,player;
+public GameObject startPlatform,oxygen,oxyclone,player;
 public float y0, firstY = 1f, x0 = 0, x; //squareEquation
 public float standOfNull, halfLengthOfGreat=2.2f,halfLengthOfMiddle=0.8f,halfLengthOfMini=0.3f;
 public float gravity =30f, tao=0.02f, t1,t2,force, extremum,platSpeed=-1*MovePlatform.maxSpeed,oxyCloneLen;
@@ -175,7 +176,7 @@ void oxygenClone(ref GameObject oxyclone, ref float y)
 		counter=0;
 	}
 	if (oxyclone!=null)
-			if (Mathf.Pow(player.transform.position.x-oxyclone.transform.position.x,2f) + Mathf.Pow(player.transform.position.y-oxyclone.transform.position.y,2f)<=0.25f)
+			if (Mathf.Pow(player.transform.position.x-oxyclone.transform.position.x,2f) + Mathf.Pow(player.transform.position.y-oxyclone.transform.position.y,2f)<=0.36f)
 				oxyclone.GetComponent<SpriteRenderer>().enabled=false;
 }
 protected void Start ()

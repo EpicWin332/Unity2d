@@ -3929,7 +3929,7 @@ MonoBehaviour:
   t2: 0
   force: 0
   extremum: 0
-  platSpeed: 5.06018019
+  platSpeed: 5
   oxyCloneLen: 0
   switchcase: 1
   next: 0
