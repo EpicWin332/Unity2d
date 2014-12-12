@@ -4,7 +4,7 @@ using System.Collections;
 public class GroundSpawn : MonoBehaviour
 {
 static public GameObject clone1;
-static public int points;
+static public int[] points = new int[3] {5,10,15};
 public GameObject[] obj;
 public GameObject startPlatform, oxygen,oxyclone,player;
 public float y0, firstY = 1f, x0 = 0, x; //squareEquation
