@@ -80,7 +80,7 @@ public class PlatformerCharacter2D : MonoBehaviour
 			rightX=gameObject.transform.position.x+lengthRect/2f;
 			topY=gameObject.transform.position.y+widthRect/2f;
 			lowerY=gameObject.transform.position.y-widthRect/2f;
-			if ((gameObject.rigidbody2D!=null)&&(isIntersection(groundCheck.position, leftX, rightX, topY+1, lowerY))) {
+			if ((gameObject.rigidbody2D!=null)&&(isIntersection(groundCheck.position, leftX-1, rightX+1, topY+1, lowerY))) {
 				SetGravity.setGravity(gameObject.GetComponent<Gravity> ().getGravity ());
 			}
 		}
