@@ -27,6 +27,8 @@ public class PlatformerCharacter2D : MonoBehaviour
 	bool doubleJump=false;
 	static public int flag=0;
 	static public bool oxygen=true;
+	int oldHashcode;
+
 
 
     void Awake()
@@ -80,8 +82,12 @@ public class PlatformerCharacter2D : MonoBehaviour
 			rightX=gameObject.transform.position.x+lengthRect/2f;
 			topY=gameObject.transform.position.y+widthRect/2f;
 			lowerY=gameObject.transform.position.y-widthRect/2f;
-			if ((gameObject.rigidbody2D!=null)&&(isIntersection(groundCheck.position, leftX-1, rightX+1, topY+1, lowerY))) {
+			if ((gameObject.rigidbody2D!=null)&&(isIntersection(groundCheck.position, leftX-1, rightX+1, topY+0.5f, lowerY))) {
 				SetGravity.setGravity(gameObject.GetComponent<Gravity> ().getGravity ());
+				if (oldHashcode!=gameObject.GetHashCode()){
+					oldHashcode=gameObject.GetHashCode();
+				CameraScript.IncreaseScore(gameObject.GetComponent<SetPoints> ().getPoint());
+				}
 			}
 		}
 

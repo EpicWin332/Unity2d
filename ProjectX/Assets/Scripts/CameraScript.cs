@@ -13,7 +13,7 @@ public class CameraScript : MonoBehaviour
 		float originalWidth = 720f;  // define here the original resolution
 		float originalHeight = 1280f; // you used to create the GUI contents 
 		private Vector3 scale;
-		float playerScore = 0;
+		static public float playerScore = 0;
 	    static public float barDisplay   = 0; 
 	     Vector2 pos = new Vector2(200, 8); 
 	    // Vector2 size = new Vector2(400,101); 
@@ -24,7 +24,8 @@ public class CameraScript : MonoBehaviour
 		// Use this for initialization
 		void Start ()
 		{
-		    barDisplay   = 0; 
+		    barDisplay   = 0;
+		    playerScore = 0;
 		}
 	
 		// Update is called once per frame
@@ -36,7 +37,7 @@ public class CameraScript : MonoBehaviour
 				newCameraPosition.x = targetObjectX + 2;
 				transform.position = newCameraPosition;
 
-				if (Application.platform == RuntimePlatform.Android) {
+			if (Application.platform == RuntimePlatform.Android && !dead) {
 						if (Input.GetKeyDown (KeyCode.Escape)) {
 								if (Time.timeScale == 1f) {
 										Time.timeScale = 0f;
@@ -47,14 +48,14 @@ public class CameraScript : MonoBehaviour
 								}
 						}
 				}
-				playerScore += Time.deltaTime;
+				//playerScore += Time.deltaTime;
 		        //barDisplay = Time.time * 0.05f;
 		        barDisplay += Time.deltaTime*10;
 		        if (barDisplay + 120 >= progressBarFull.width)
 						PlatformerCharacter2D.oxygen = false;
 		}
 
-		public void IncreaseScore (int amount)
+		static public void IncreaseScore (int amount)
 		{
 				playerScore += amount;
 		}
@@ -77,7 +78,7 @@ public class CameraScript : MonoBehaviour
 			                 , originalWidth - (originalWidth / 2 - playTexture.width / 2 - 130) * 2 + 120, playTexture.height + 120), "Pause", myStyle);
 				if (GUI.Button 
 		    (new Rect 
-		 (originalWidth - buttonTexture.width - 2, 0, buttonTexture.width, buttonTexture.height), buttonTexture, GUIStyle.none)) {
+		 (originalWidth - buttonTexture.width - 2, 0, buttonTexture.width, buttonTexture.height), buttonTexture, GUIStyle.none) && !dead) {
 						Time.timeScale = 0f;
 						visible = true;
 				}
@@ -114,6 +115,10 @@ public class CameraScript : MonoBehaviour
 								+ (int)playerScore, myStyle);
 			            
 						Time.timeScale = 0f;
+					if((int)playerScore>MainMenu.maxScore){
+				MainMenu.maxScore=(int)playerScore;
+				PlayerPrefs.SetInt("maxScore",MainMenu.maxScore);
+			}
 				}
 
 		//draw the background:
