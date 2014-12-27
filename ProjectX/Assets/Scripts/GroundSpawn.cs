@@ -4,12 +4,12 @@ using System.Collections;
 public class GroundSpawn : MonoBehaviour
 {
 static public GameObject clone1;
-static public int[] points = new int[3] {5,10,15};
+static public int[] points = new int[3] {2,3,5};
 public GameObject[] obj;
 public GameObject startPlatform, oxygen,oxyclone,player;
 public float y0, firstY = 1f, x0 = 0, x; //squareEquation
 public float standOfNull, halfLengthOfGreat=2.2f,halfLengthOfMiddle=0.8f,halfLengthOfMini=0.3f;
-public float gravity =30f, tao=0.02f, t1,t2,force, extremum,platSpeed=-1*MovePlatform.maxSpeed,oxyCloneLen;
+public float gravity =30f, tao=0.02f, t1,t2,force, extremum,platSpeed=-1*MovePlatform.maxSpeed,oxyCloneLen,lenLimit;
 public int switchcase = 1, next, prev,prevSize,nextSize, letSlide=0;
 public int[] values = new int[15] {0,0,1,1,2,3,3,4,4,5,6,6,7,7,8};//0-great 1-mini 2-mini
 //int[] values = new int[5] {2,2,2,2,2};
@@ -100,7 +100,7 @@ void LetClone (ref GameObject clone, ref float y)
 				nextSize=setSize(next);
 				if (nextSize == 0) {
 
-					clone = Instantiate (obj [next], new Vector2 (clone.rigidbody2D.position.x+ Random.Range(halfLengthOfGreat,2*halfLengthOfGreat) + platSpeed * t1, y), Quaternion.identity) as GameObject; //5-скорость платформы
+					clone = Instantiate (obj [next], new Vector2 (clone.rigidbody2D.position.x+ Random.Range(halfLengthOfGreat,2*halfLengthOfGreat) + platSpeed * t1+0.5f, y), Quaternion.identity) as GameObject; //5-скорость платформы
 					//clone2 = Instantiate (tinies[2], new Vector2 (clone.rigidbody2D.position.x+ Random.Range(halfLengthOfGreat,2*halfLengthOfGreat) + platSpeed * t1+0.5f, y-0.5f), Quaternion.identity) as GameObject;
 					
 				}
@@ -122,7 +122,7 @@ void LetClone (ref GameObject clone, ref float y)
 				next = values [next];
 				nextSize=setSize(next);
 				if (nextSize == 0) {
-					clone = Instantiate (obj [next], new Vector2 (clone.rigidbody2D.position.x + Random.Range (halfLengthOfMiddle, halfLengthOfMiddle+halfLengthOfGreat)  + platSpeed * t1, y), Quaternion.identity) as GameObject;
+					clone = Instantiate (obj [next], new Vector2 (clone.rigidbody2D.position.x + Random.Range (halfLengthOfMiddle, halfLengthOfMiddle+halfLengthOfGreat)  + platSpeed * t1+0.5f, y), Quaternion.identity) as GameObject;
 				}
 				if (nextSize == 1) {
 					clone = Instantiate (obj [next], new Vector2 (clone.rigidbody2D.position.x + Random.Range (halfLengthOfMiddle, 2*halfLengthOfMiddle) + platSpeed * t1, y ), Quaternion.identity) as GameObject;
@@ -139,7 +139,7 @@ void LetClone (ref GameObject clone, ref float y)
 				next = values [next];
 				nextSize=setSize(next);
 				if (nextSize == 0) {
-					clone = Instantiate (obj [next], new Vector2 (clone.rigidbody2D.position.x + Random.Range (halfLengthOfMini, halfLengthOfMini+halfLengthOfGreat) + platSpeed * t1, y ), Quaternion.identity) as GameObject;
+					clone = Instantiate (obj [next], new Vector2 (clone.rigidbody2D.position.x + Random.Range (halfLengthOfMini, halfLengthOfMini+halfLengthOfGreat) + platSpeed * t1+0.5f, y ), Quaternion.identity) as GameObject;
 				}
 				if (nextSize == 1) {
 					clone = Instantiate (obj [next], new Vector2 (clone.rigidbody2D.position.x + Random.Range (halfLengthOfMini, halfLengthOfMini+halfLengthOfMiddle) + platSpeed * t1, y ), Quaternion.identity) as GameObject;
@@ -171,15 +171,29 @@ void oxygenClone(ref GameObject oxyclone, ref float y)
 	if (counter == 1)
 	{
 		if ((next==0)|| (next==3) ||(next==6))
+			{
 				oxyCloneLen=halfLengthOfGreat;
-			else oxyCloneLen=0f;
-		oxyclone = Instantiate (oxygen, new Vector2 (clone1.rigidbody2D.position.x+Random.Range(-oxyCloneLen,oxyCloneLen),clone1.rigidbody2D.position.y+Random.Range(1f,2f)), Quaternion.identity) as GameObject;
+				lenLimit=-1f;
+			}
+		if ((next==1)||(next==4)||(next==7))
+			{
+				oxyCloneLen=halfLengthOfMiddle;
+				lenLimit=-0.3f;
+			}
+		if ((next==2)||(next==5)||(next==8))
+			{
+				oxyCloneLen=halfLengthOfMini;
+				lenLimit=0f;
+			}
+
+		oxyclone = Instantiate (oxygen, new Vector2 (clone1.rigidbody2D.position.x+Random.Range(-oxyCloneLen,lenLimit),clone1.rigidbody2D.position.y+Random.Range(1f,2f)), Quaternion.identity) as GameObject;
 		
 		counter=0;
 	}
 	if (oxyclone != null) {
-						if (Mathf.Pow (player.transform.position.x - oxyclone.transform.position.x, 2f) + Mathf.Pow (player.transform.position.y - oxyclone.transform.position.y, 2f) <= 0.4f) {
+			if ((Mathf.Pow (player.transform.position.x - oxyclone.transform.position.x, 2f) + Mathf.Pow (player.transform.position.y - oxyclone.transform.position.y, 2f)) <= 1f) {
 								oxyclone.GetComponent<SpriteRenderer> ().enabled = false;
+			
 								if (flag) {
 					if(CameraScript.barDisplay < 100)
 										CameraScript.barDisplay = 0;
@@ -202,7 +216,7 @@ protected void Start ()
 			t1 = SquareEquationSmall (y0, firstY,600);
 			next = rnd.Next (0, values.Length);
 			next = values [next];
-			clone1 = Instantiate (obj [next], new Vector2 (3.478378f * 2f + platSpeed * t1, firstY - setStandofNull(next)), Quaternion.identity) as GameObject;
+			clone1 = Instantiate (obj [next], new Vector2 (4f * 2f + platSpeed * t1, firstY - setStandofNull(next)), Quaternion.identity) as GameObject;
 			//oxyclone = Instantiate (oxygen, new Vector2 (clone1.rigidbody2D.position.x,clone1.rigidbody2D.position.y+1f), Quaternion.identity) as GameObject;
 			
 			prev = next;
