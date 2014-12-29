@@ -27,7 +27,7 @@ public class CameraScript : MonoBehaviour
 		    barDisplay   = 0;
 		    playerScore = 0;
 		}
-	
+	    
 		// Update is called once per frame
 		void Update ()
 		{

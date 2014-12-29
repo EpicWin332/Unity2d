@@ -3,12 +3,10 @@ using System.Collections;
 
 public class DestroyerScript : MonoBehaviour 
 {
-	public AudioClip death;
 	void OnTriggerEnter2D(Collider2D other)
 	{
 		if (other.tag == "Player") 
 		{
-			audio.clip=death;
 			audio.Play();
 			CameraScript.dead=true;
 		}
