@@ -15,7 +15,7 @@ public class CameraScript : MonoBehaviour
 		private Vector3 scale;
 		static public float playerScore = 0;
 	    static public float barDisplay   = 0; 
-	     Vector2 pos = new Vector2(200, 8); 
+	     Vector2 pos = new Vector2(205, 8); 
 	    // Vector2 size = new Vector2(400,101); 
 	    public Texture2D progressBarEmpty; 
 	    public Texture2D progressBarFull;
@@ -122,12 +122,12 @@ public class CameraScript : MonoBehaviour
 				}
 
 		//draw the background:
-		GUI.BeginGroup(new Rect(pos.x, pos.y, progressBarEmpty.width, progressBarEmpty.height));
-		GUI.Box(new Rect(0,0, progressBarEmpty.width, progressBarEmpty.height), progressBarEmpty, GUIStyle.none);
+		GUI.BeginGroup(new Rect(pos.x, pos.y, progressBarEmpty.width-60, progressBarEmpty.height));
+		GUI.Box(new Rect(0,0, progressBarEmpty.width-60, progressBarEmpty.height), progressBarEmpty, GUIStyle.none);
 		
 		   //draw the filled-in part:
-		GUI.BeginGroup(new Rect(0,0, progressBarFull.width-(barDisplay+110), progressBarFull.height));
-		GUI.Box(new Rect(0,0, progressBarFull.width, progressBarFull.height), progressBarFull, GUIStyle.none);
+		GUI.BeginGroup(new Rect(0,0, progressBarFull.width-(barDisplay+40)-60, progressBarFull.height));
+		GUI.Box(new Rect(0,0, progressBarFull.width-60, progressBarFull.height), progressBarFull, GUIStyle.none);
 		   GUI.EndGroup();
 		GUI.EndGroup();
 			GUI.matrix = svMat; // restore matrix

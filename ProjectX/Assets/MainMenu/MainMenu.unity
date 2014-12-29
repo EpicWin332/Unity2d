@@ -9586,11 +9586,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a0a2db24998a46f28139161c63fbb36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  backGround: {fileID: 0}
   buttonTexture: {fileID: 2800000, guid: 50e7dbacef10040179a6290e46de2015, type: 3}
   soundTexture: {fileID: 2800000, guid: b0dccde03ce0c471b94a5c1979c64e55, type: 3}
   soundonTexture: {fileID: 2800000, guid: b0dccde03ce0c471b94a5c1979c64e55, type: 3}
   soundoffTexture: {fileID: 2800000, guid: 2e316c27578a84d4a8e18e62bf9a5700, type: 3}
+  infoTexture: {fileID: 2800000, guid: d8b38044af7fc4a299a0587a779fda74, type: 3}
+  downTexture: {fileID: 2800000, guid: 4b35d8e98aa1d4dbfab4248d7bb887f8, type: 3}
 --- !u!81 &2040460334
 AudioListener:
   m_ObjectHideFlags: 0
