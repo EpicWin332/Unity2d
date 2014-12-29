@@ -3928,7 +3928,7 @@ MonoBehaviour:
   t2: 0
   force: 0
   extremum: 0
-  platSpeed: 5
+  platSpeed: 5.30854368
   oxyCloneLen: 0
   lenLimit: 0
   switchcase: 1
@@ -6486,6 +6486,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f118554552bfe452c89cc3e3c1e45828, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  death: {fileID: 8300000, guid: 26679871dbc8147239cb5cf562869da8, type: 3}
 --- !u!50 &1205793233
 Rigidbody2D:
   m_ObjectHideFlags: 0
@@ -7380,6 +7381,7 @@ GameObject:
   - 124: {fileID: 1379103346}
   - 81: {fileID: 1379103345}
   - 114: {fileID: 1379103350}
+  - 82: {fileID: 1379103351}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -7474,6 +7476,64 @@ MonoBehaviour:
   homeTexture: {fileID: 2800000, guid: 9e91b44df612643a79070e46796987cc, type: 3}
   progressBarEmpty: {fileID: 2800000, guid: c5bec14d4c3274b76bab52da1080c9e3, type: 3}
   progressBarFull: {fileID: 2800000, guid: 47967b8726f9d4de0b72b9c553ec0c1d, type: 3}
+--- !u!82 &1379103351
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1379103344}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_audioClip: {fileID: 8300000, guid: b63b3196a902e4e51b7c38136dc6f23f, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!1001 &1400354348
 Prefab:
   m_ObjectHideFlags: 0
@@ -8462,6 +8522,10 @@ Prefab:
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: 87a2357765801c34292d6718d8b4d770, type: 2}
+      propertyPath: death
+      value: 
+      objectReference: {fileID: 8300000, guid: 26679871dbc8147239cb5cf562869da8, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 87a2357765801c34292d6718d8b4d770, type: 2}
   m_RootGameObject: {fileID: 1749908160}
@@ -9589,6 +9653,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f118554552bfe452c89cc3e3c1e45828, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  death: {fileID: 8300000, guid: 26679871dbc8147239cb5cf562869da8, type: 3}
 --- !u!50 &1835455429
 Rigidbody2D:
   m_ObjectHideFlags: 0
