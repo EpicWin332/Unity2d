@@ -9,9 +9,13 @@ public class MainMenu : MonoBehaviour {
 	float originalHeight = 1280f; // you used to create the GUI contents 
 	private Vector3 scale;
 	static public int maxScore;
+	public Texture2D soundTexture;
+	public Texture2D soundonTexture;
+	public Texture2D soundoffTexture;
 
 
 	void Start () {
+		if(AudioListener.volume==0) soundTexture=soundoffTexture;
 		if(PlayerPrefs.HasKey("maxScore")){
 			// there is a score, load that one
 			maxScore=PlayerPrefs.GetInt("maxScore");
@@ -40,6 +44,19 @@ public class MainMenu : MonoBehaviour {
 			Application.LoadLevel(1);
 			return;
 				}
+		if (AudioListener.volume != 0 && GUI.Button 
+		    (new Rect 
+		 (originalWidth - soundTexture.width + 4, -6, soundTexture.width, soundTexture.height), soundTexture, GUIStyle.none)) {
+			soundTexture=soundoffTexture;
+			AudioListener.volume = 0;
+		}
+		if (AudioListener.volume == 0 && GUI.Button 
+		    (new Rect 
+		 (originalWidth - soundTexture.width + 4, -6, soundTexture.width, soundTexture.height), soundTexture, GUIStyle.none)) {
+			soundTexture=soundonTexture;
+			AudioListener.volume = 1;
+		}
+
 		GUI.matrix = svMat; // restore matrix
 	}
 }
