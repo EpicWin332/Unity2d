@@ -168,14 +168,16 @@ void LetClone (ref GameObject clone, ref float y)
 }
 void oxygenClone(ref GameObject oxyclone, ref float y)
 {
-	if (counter == 1)
+	if ((counter == 1)||(counter == 2) || (counter==3))
 	{
 		if ((next==0)|| (next==3) ||(next==6))
 			{
 				oxyCloneLen=halfLengthOfGreat;
 				lenLimit=-1f;
+				oxyclone = Instantiate (oxygen, new Vector2 (clone1.rigidbody2D.position.x+Random.Range(-oxyCloneLen,lenLimit),clone1.rigidbody2D.position.y+Random.Range(1f,2f)), Quaternion.identity) as GameObject;
+				
 			}
-		if ((next==1)||(next==4)||(next==7))
+		/*if ((next==1)||(next==4)||(next==7))
 			{
 				oxyCloneLen=halfLengthOfMiddle;
 				lenLimit=-0.3f;
@@ -184,14 +186,14 @@ void oxygenClone(ref GameObject oxyclone, ref float y)
 			{
 				oxyCloneLen=halfLengthOfMini;
 				lenLimit=0f;
-			}
+			}*/
 
-		oxyclone = Instantiate (oxygen, new Vector2 (clone1.rigidbody2D.position.x+Random.Range(-oxyCloneLen,lenLimit),clone1.rigidbody2D.position.y+Random.Range(1f,2f)), Quaternion.identity) as GameObject;
+		;
 		
 		counter=0;
 	}
 	if (oxyclone != null) {
-			if ((Mathf.Pow (player.transform.position.x - oxyclone.transform.position.x, 2f) + Mathf.Pow (player.transform.position.y - oxyclone.transform.position.y, 2f)) <= 1f) {
+			if (((Mathf.Pow (player.transform.position.x - oxyclone.transform.position.x, 2f) + Mathf.Pow (player.transform.position.y - oxyclone.transform.position.y, 2f)) <= 0.36f)) {
 								oxyclone.GetComponent<SpriteRenderer> ().enabled = false;
 			
 								if (flag) {

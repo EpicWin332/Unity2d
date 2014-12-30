@@ -1929,7 +1929,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 425931551}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .827735305, y: .157533377, z: 30}
+  m_LocalPosition: {x: .830960631, y: .157533377, z: 30}
   m_LocalScale: {x: 1.47065651, y: 1.47065735, z: 1}
   m_Children: []
   m_Father: {fileID: 1379103349}
@@ -3928,7 +3928,7 @@ MonoBehaviour:
   t2: 0
   force: 0
   extremum: 0
-  platSpeed: 5
+  platSpeed: 6.27755404
   oxyCloneLen: 0
   lenLimit: 0
   switchcase: 1

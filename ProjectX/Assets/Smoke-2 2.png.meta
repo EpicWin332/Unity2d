@@ -1,0 +1,267 @@
+fileFormatVersion: 2
+guid: 1f0d279bcb48344da9ec15642f84c7b0
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Smoke-2 2_0
+    21300002: Smoke-2 2_1
+    21300004: Smoke-2 2_2
+    21300006: Smoke1
+    21300008: Smoke2
+    21300010: Smoke3
+    21300012: Smoke3
+    21300014: Smoke4
+    21300016: Smoke5
+    21300018: Smoke6
+    21300020: Smoke-2 2_10
+    21300022: Smoke-2 2_11
+    21300024: Smoke-2 2_12
+    21300026: Smoke-2 2_13
+    21300028: Smoke-2 2_14
+    21300030: Smoke-2 2_15
+    21300032: Smoke-2 2_16
+    21300034: Smoke-2 2_17
+    21300036: Smoke-2 2_18
+    21300038: Smoke-2 2_19
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 1024
+  textureSettings:
+    filterMode: -1
+    aniso: 1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: Smoke-2 2_0
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 9
+        width: 81
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Smoke-2 2_1
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 9
+        width: 81
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Smoke-2 2_2
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 9
+        width: 81
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Smoke1
+      rect:
+        serializedVersion: 2
+        x: 298
+        y: 9
+        width: 81
+        height: 84
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Smoke2
+      rect:
+        serializedVersion: 2
+        x: 394
+        y: 9
+        width: 81
+        height: 85
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Smoke3
+      rect:
+        serializedVersion: 2
+        x: 490
+        y: 9
+        width: 81
+        height: 85
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Smoke3
+      rect:
+        serializedVersion: 2
+        x: 586
+        y: 9
+        width: 81
+        height: 84
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Smoke4
+      rect:
+        serializedVersion: 2
+        x: 682
+        y: 9
+        width: 81
+        height: 82
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Smoke5
+      rect:
+        serializedVersion: 2
+        x: 778
+        y: 9
+        width: 81
+        height: 80
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Smoke6
+      rect:
+        serializedVersion: 2
+        x: 874
+        y: 9
+        width: 81
+        height: 80
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Smoke-2 2_10
+      rect:
+        serializedVersion: 2
+        x: 970
+        y: 9
+        width: 81
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Smoke-2 2_11
+      rect:
+        serializedVersion: 2
+        x: 1066
+        y: 9
+        width: 81
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Smoke-2 2_12
+      rect:
+        serializedVersion: 2
+        x: 1162
+        y: 9
+        width: 81
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Smoke-2 2_13
+      rect:
+        serializedVersion: 2
+        x: 1258
+        y: 9
+        width: 81
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Smoke-2 2_14
+      rect:
+        serializedVersion: 2
+        x: 1354
+        y: 9
+        width: 81
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Smoke-2 2_15
+      rect:
+        serializedVersion: 2
+        x: 1450
+        y: 9
+        width: 81
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Smoke-2 2_16
+      rect:
+        serializedVersion: 2
+        x: 1546
+        y: 9
+        width: 81
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Smoke-2 2_17
+      rect:
+        serializedVersion: 2
+        x: 1642
+        y: 9
+        width: 81
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Smoke-2 2_18
+      rect:
+        serializedVersion: 2
+        x: 1738
+        y: 9
+        width: 81
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Smoke-2 2_19
+      rect:
+        serializedVersion: 2
+        x: 1834
+        y: 9
+        width: 81
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
