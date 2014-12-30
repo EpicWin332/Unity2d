@@ -1,4 +1,4 @@
-using UnityEngine;
+абusing UnityEngine;
 using System.Collections;
 //using MovePlatform.cs;
 public class GroundSpawn : MonoBehaviour
@@ -168,7 +168,7 @@ void LetClone (ref GameObject clone, ref float y)
 }
 void oxygenClone(ref GameObject oxyclone, ref float y)
 {
-	if ((counter == 1)||(counter == 2) || (counter==3))
+	if ((counter == 1))
 	{
 		if ((next==0)|| (next==3) ||(next==6))
 			{
