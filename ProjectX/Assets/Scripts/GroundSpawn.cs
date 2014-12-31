@@ -1,4 +1,4 @@
-абusing UnityEngine;
+using UnityEngine;
 using System.Collections;
 //using MovePlatform.cs;
 public class GroundSpawn : MonoBehaviour
@@ -197,14 +197,15 @@ void oxygenClone(ref GameObject oxyclone, ref float y)
 								oxyclone.GetComponent<SpriteRenderer> ().enabled = false;
 			
 								if (flag) {
-					if(CameraScript.barDisplay < 100)
+					            flag = false;
+					if(CameraScript.barDisplay < 60)
 										CameraScript.barDisplay = 0;
 					else
-						CameraScript.barDisplay -= 100;
-										flag = false;
+						CameraScript.barDisplay -= 60;
+										
 								}
 						}
-			if (!(Mathf.Pow (player.transform.position.x - oxyclone.transform.position.x, 2f) + Mathf.Pow (player.transform.position.y - oxyclone.transform.position.y, 2f) <= 0.25f)) 
+			if (!(Mathf.Pow (player.transform.position.x - oxyclone.transform.position.x, 2f) + Mathf.Pow (player.transform.position.y - oxyclone.transform.position.y, 2f) <= 0.36f)) 
 				flag=true;
 			}
 }
