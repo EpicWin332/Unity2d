@@ -84,21 +84,21 @@ public class MainMenu : MonoBehaviour {
 		         "Podusenko Albert\n" +
 		         "Yaraliev Rashid\n\n" +
 		         "Designers:\n\n" +
-		         "???\n" +
-		         "???",myStyle);
+		         "Yaraliev Nurali\n" +
+		         "Pechenkin Bogdan",myStyle);
 		GUI.matrix = svMat; // restore matrix
 	}
 
 	void Update()
 	{
-		if (up) lift += Time.deltaTime*1200;
+		if (up) lift += Time.deltaTime*2000;
 		if (lift >= originalHeight) {
 						up = false;
 						lift = originalHeight;
 						main=false;
 				}
 		
-		if (down) lift -= Time.deltaTime*1200;
+		if (down) lift -= Time.deltaTime*2000;
 		if (lift <= 0) {down = false;lift=0;main=true;}
 		if (Application.platform == RuntimePlatform.Android && !up  && !down && main) {
 			if (Input.GetKeyDown (KeyCode.Escape)) {

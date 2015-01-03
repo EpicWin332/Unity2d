@@ -198,10 +198,10 @@ void oxygenClone(ref GameObject oxyclone, ref float y)
 			
 								if (flag) {
 					            flag = false;
-					if(CameraScript.barDisplay < 60)
+					if(CameraScript.barDisplay < 90)
 										CameraScript.barDisplay = 0;
 					else
-						CameraScript.barDisplay -= 60;
+						CameraScript.barDisplay -= 90;
 										
 								}
 						}
