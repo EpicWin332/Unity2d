@@ -28,7 +28,7 @@ public class PlatformerCharacter2D : MonoBehaviour
 	bool doubleJump=false;
 	static public int flag=0;
 	static public bool oxygen=true;
-	int oldHashcode;
+	int oldHashcode, oldHashcodeSecond;
 
 
 
@@ -70,6 +70,7 @@ public class PlatformerCharacter2D : MonoBehaviour
 		}
 
 	private void collideWithPlatforms(){
+		int currentHashcode;
 		ArrayList arrayList = new ArrayList ();
 		arrayList.AddRange (GameObject.FindGameObjectsWithTag ("greatPlatform"));
 		arrayList.AddRange (GameObject.FindGameObjectsWithTag ("middlePlatform"));
@@ -85,8 +86,10 @@ public class PlatformerCharacter2D : MonoBehaviour
 			lowerY=gameObject.transform.position.y-widthRect/2f;
 			if ((gameObject.rigidbody2D!=null)&&(isIntersection(groundCheck.position, leftX-1, rightX+1, topY+0.5f, lowerY))) {
 				SetGravity.setGravity(gameObject.GetComponent<Gravity> ().getGravity ());
-				if (oldHashcode!=gameObject.GetHashCode()){
-					oldHashcode=gameObject.GetHashCode();
+				currentHashcode=gameObject.GetHashCode();
+				if ((oldHashcode!=currentHashcode) && (oldHashcodeSecond!=currentHashcode)){
+					oldHashcodeSecond=oldHashcode;
+					oldHashcode=currentHashcode;
 				CameraScript.IncreaseScore(gameObject.GetComponent<SetPoints> ().getPoint());
 				}
 			}
