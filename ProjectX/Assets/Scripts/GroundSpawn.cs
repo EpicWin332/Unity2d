@@ -160,7 +160,7 @@ void LetClone (ref GameObject clone, ref float y)
 				y=y-1f;
 			//if (extremum==4f)
 				//y = Random.Range (-3f,4f)-setStandofNull(next);// В УРАВНЕНИИ НЕТ ОШИБОК! (-1f,y0+extr) y0 может стать тупо меньше первого аргумента
-			counter = rnd.Next(0, 5);
+			counter = rnd.Next(0, 3);
 		}
 
 
